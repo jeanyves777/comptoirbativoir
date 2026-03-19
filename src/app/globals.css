@@ -24,9 +24,37 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
+/* Section alternating backgrounds */
+.section-light {
+  background-color: #fafaf9;
+}
+.dark .section-light {
+  background-color: #171717;
+}
+
+.section-warm {
+  background: linear-gradient(180deg, #fefce8 0%, #fffbeb 50%, #fefce8 100%);
+}
+.dark .section-warm {
+  background: linear-gradient(180deg, #1a1a1a 0%, #1c1917 50%, #1a1a1a 100%);
+}
+
+.section-cool {
+  background: linear-gradient(180deg, #f5f5f4 0%, #fafaf9 50%, #f5f5f4 100%);
+}
+.dark .section-cool {
+  background: linear-gradient(180deg, #141414 0%, #171717 50%, #141414 100%);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 3px; }
 .dark ::-webkit-scrollbar-thumb { background: #404040; }
 ::selection { background: #f59e0b; color: #171717; }
+
+/* Slide-in animation for hero */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}

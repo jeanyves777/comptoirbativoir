@@ -79,7 +79,7 @@ export default function Services() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-neutral-50 dark:bg-neutral-900"
+      className="py-24 section-warm"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}

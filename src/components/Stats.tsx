@@ -94,7 +94,7 @@ export default function Stats() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 sm:py-24 bg-neutral-50 dark:bg-neutral-900"
+      className="relative py-20 sm:py-24 section-warm"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}

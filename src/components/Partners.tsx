@@ -12,7 +12,7 @@ export default function Partners() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 bg-white dark:bg-neutral-950"
+      className="relative py-24 section-light"
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Section Header */}

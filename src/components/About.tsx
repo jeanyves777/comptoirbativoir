@@ -296,7 +296,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-24 bg-white dark:bg-neutral-950 overflow-hidden"
+      className="relative py-24 section-cool overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
