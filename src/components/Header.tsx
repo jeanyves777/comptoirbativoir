@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks } from '@/lib/data'
-import ThemeToggle from './ThemeToggle'
+// import ThemeToggle from './ThemeToggle'
 import Logo from '@/components/Logo'
 
 export default function Header() {
@@ -77,7 +77,7 @@ export default function Header() {
 
           {/* CTA + Theme Toggle */}
           <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Link
               href="/contact"
               className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-950 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 hover:scale-105 active:scale-95"
@@ -97,7 +97,7 @@ export default function Header() {
 
           {/* Mobile: Theme Toggle + Menu Button */}
           <div className="flex md:hidden items-center gap-1">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="relative p-2 text-gray-300 hover:text-amber-400 transition-colors"
