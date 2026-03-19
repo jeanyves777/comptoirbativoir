@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: 'Comptoir des Bâtisseurs Ivoiriens | Électricité Industrielle',
   description: 'Le COMPTOIR DES BATISSEURS IVOIRIENS met au service des professionnels son savoir-faire et sa forte expérience dans le domaine des installations électriques industrielles, bâtiment, groupe électrogène et froid climatisation.',
   keywords: 'électricité industrielle, groupe électrogène, froid climatisation, Abidjan, Côte d\'Ivoire, CBI',
+  icons: { icon: '/favicon.svg' },
+  openGraph: {
+    images: ['/images/og-image.jpg'],
+  },
 }
 
 export default function RootLayout({

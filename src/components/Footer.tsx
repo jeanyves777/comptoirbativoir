@@ -39,32 +39,27 @@ export default function Footer() {
 
       <style jsx>{`
         @keyframes shimmer {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0%); }
         }
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        {/* Top row: Logo + Contact info side by side */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 pb-10 border-b border-gray-800/50"
         >
-          {/* Company Info */}
-          <motion.div variants={fadeInUp} custom={0} className="lg:col-span-1">
+          {/* Company Info + Social */}
+          <motion.div variants={fadeInUp} custom={0}>
             <Link href="/" className="inline-block mb-4">
               <Logo size="md" variant="light" showText={true} />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-md">
               {companyInfo.description}
             </p>
-
-            {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -81,18 +76,64 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Contact Info */}
           <motion.div variants={fadeInUp} custom={1}>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+              Contact
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
+                  <MapPin size={14} className="text-amber-500" />
+                </div>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {companyInfo.address}
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
+                  <Phone size={14} className="text-amber-500" />
+                </div>
+                <div className="space-y-1">
+                  {companyInfo.phones.map((phone) => (
+                    <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="block text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200">
+                      {phone}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
+                  <Mail size={14} className="text-amber-500" />
+                </div>
+                <div className="space-y-1">
+                  {companyInfo.emails.map((email) => (
+                    <a key={email} href={`mailto:${email}`} className="block text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 break-all">
+                      {email}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Bottom row: Links */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10"
+        >
+          {/* Quick Links */}
+          <motion.div variants={fadeInUp} custom={0}>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
               Liens Rapides
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group"
-                  >
+                  <Link href={link.href} className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
                     <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
                     {link.label}
                   </Link>
@@ -107,17 +148,34 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Legal Links */}
-          <motion.div variants={fadeInUp} custom={1.5}>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+          {/* Services */}
+          <motion.div variants={fadeInUp} custom={1}>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              Nos Services
+            </h3>
+            <ul className="space-y-2.5">
+              {['Coffret Inverseur', 'Climatisation', 'Groupe Électrogène', 'Maintenance', 'Électricité Bâtiment'].map((s) => (
+                <li key={s}>
+                  <Link href="/services" className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                    {s}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Legal */}
+          <motion.div variants={fadeInUp} custom={2}>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
               Informations Légales
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 { href: '/legal', label: 'Mentions Légales' },
-                { href: '/privacy', label: 'Politique de Confidentialité' },
-                { href: '/terms', label: 'Conditions Générales' },
-                { href: '/cookies', label: 'Politique des Cookies' },
+                { href: '/privacy', label: 'Confidentialité' },
+                { href: '/terms', label: 'CGU' },
+                { href: '/cookies', label: 'Cookies' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
@@ -129,70 +187,32 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
-          <motion.div variants={fadeInUp} custom={2} className="lg:col-span-2">
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
-              Contact
+          {/* Devis CTA */}
+          <motion.div variants={fadeInUp} custom={3}>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              Besoin d&apos;un Devis ?
             </h3>
-            <div className="space-y-4">
-              {/* Address */}
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <MapPin size={14} className="text-amber-500" />
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {companyInfo.address}
-                </p>
-              </div>
-
-              {/* Phones */}
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <Phone size={14} className="text-amber-500" />
-                </div>
-                <div className="space-y-1">
-                  {companyInfo.phones.map((phone) => (
-                    <a
-                      key={phone}
-                      href={`tel:${phone.replace(/\s/g, '')}`}
-                      className="block text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200"
-                    >
-                      {phone}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Emails */}
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <Mail size={14} className="text-amber-500" />
-                </div>
-                <div className="space-y-1">
-                  {companyInfo.emails.map((email) => (
-                    <a
-                      key={email}
-                      href={`mailto:${email}`}
-                      className="block text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 break-all"
-                    >
-                      {email}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Contactez-nous pour un devis gratuit et personnalisé.
+            </p>
+            <Link
+              href="/quote"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 font-semibold text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg shadow-amber-500/20"
+            >
+              Obtenir un Devis
+            </Link>
           </motion.div>
         </motion.div>
 
-        {/* Bottom Bar */}
+        {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-12 pt-6 border-t border-gray-800/50"
+          className="pt-6 border-t border-gray-800/50 text-center"
         >
-          <p className="text-center text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm">
             &copy; {currentYear} {companyInfo.name}. Tous droits r&eacute;serv&eacute;s.
           </p>
         </motion.div>

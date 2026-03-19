@@ -8,25 +8,16 @@ interface LogoProps {
 
 const sizeConfig = {
   sm: { icon: 40, textSize: '0.5rem', gap: 4, letterSpacing: '0.08em' },
-  md: { icon: 64, textSize: '0.65rem', gap: 6, letterSpacing: '0.1em' },
-  lg: { icon: 96, textSize: '0.85rem', gap: 8, letterSpacing: '0.12em' },
+  md: { icon: 56, textSize: '0.6rem', gap: 6, letterSpacing: '0.1em' },
+  lg: { icon: 80, textSize: '0.75rem', gap: 8, letterSpacing: '0.12em' },
 }
 
 export default function Logo({ size = 'md', variant = 'auto', showText = true }: LogoProps) {
   const config = sizeConfig[size]
 
-  const getColors = () => {
-    if (variant === 'dark') {
-      return { primary: '#f59e0b', secondary: '#0f172a', text: '#0f172a' }
-    }
-    if (variant === 'light') {
-      return { primary: '#f59e0b', secondary: '#ffffff', text: '#ffffff' }
-    }
-    // auto - uses CSS currentColor approach
-    return { primary: '#f59e0b', secondary: 'currentColor', text: 'currentColor' }
-  }
-
-  const colors = getColors()
+  const amber = '#f59e0b'
+  const amberLight = '#fbbf24'
+  const dark = variant === 'light' ? '#ffffff' : variant === 'dark' ? '#0f172a' : 'currentColor'
 
   return (
     <div
@@ -40,90 +31,70 @@ export default function Logo({ size = 'md', variant = 'auto', showText = true }:
       <svg
         width={config.icon}
         height={config.icon}
-        viewBox="0 0 120 120"
+        viewBox="0 0 200 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="CBI Logo"
       >
-        {/* Shield / Hexagonal shape */}
-        <path
-          d="M60 4L108 28V72C108 90 88 108 60 116C32 108 12 90 12 72V28L60 4Z"
-          fill={colors.primary}
-          stroke={colors.primary}
-          strokeWidth="2"
-          strokeLinejoin="round"
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor={amberLight} />
+            <stop offset="100%" stopColor={amber} />
+          </linearGradient>
+          <linearGradient id="boltGrad" x1="100" y1="30" x2="100" y2="170" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#fde68a" />
+            <stop offset="100%" stopColor={amber} />
+          </linearGradient>
+        </defs>
+
+        {/* Outer rounded square frame */}
+        <rect
+          x="8" y="8" width="184" height="184" rx="32"
+          stroke="url(#logoGrad)" strokeWidth="5" fill="none"
         />
 
-        {/* Inner shield cutout */}
-        <path
-          d="M60 12L102 33V72C102 86.5 84.5 102 60 109C35.5 102 18 86.5 18 72V33L60 12Z"
-          fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'}
-        />
+        {/* Inner accent lines - top left and bottom right corners */}
+        <path d="M40 8 L40 28 Q40 40 28 40 L8 40" stroke={amber} strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path d="M160 192 L160 172 Q160 160 172 160 L192 160" stroke={amber} strokeWidth="3" fill="none" strokeLinecap="round" />
 
         {/* Letter C */}
         <path
-          d="M30 52C30 40.954 38.954 32 50 32H54V40H50C43.373 40 38 45.373 38 52V62C38 68.627 43.373 74 50 74H54V82H50C38.954 82 30 73.046 30 62V52Z"
-          fill={colors.primary}
-          opacity="0.95"
+          d="M38 80 C38 58 54 42 76 42 L84 42 L84 56 L76 56 C63 56 54 65 54 80 L54 120 C54 135 63 144 76 144 L84 144 L84 158 L76 158 C54 158 38 142 38 120 Z"
+          fill="url(#logoGrad)"
         />
 
-        {/* Letter B with lightning bolt integrated */}
+        {/* Letter B */}
         <path
-          d="M56 32H68C74.627 32 80 37.373 80 44V46C80 49.5 78.2 52.6 75.4 54.4C79.1 56.3 82 60 82 64V68C82 75.18 76.18 82 69 82H56V32Z"
-          fill={colors.primary}
-          opacity="0.95"
+          d="M92 42 L120 42 C136 42 146 52 146 66 C146 74 142 80 135 84 C144 88 150 96 150 108 L150 112 C150 128 138 158 120 158 L92 158 Z"
+          fill="url(#logoGrad)"
         />
         {/* B inner cutout top */}
-        <path
-          d="M64 40H66C69.314 40 72 42.686 72 46V47C72 50.314 69.314 53 66 53H64V40Z"
-          fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'}
-        />
+        <rect x="108" y="56" width="22" height="22" rx="8" fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'} />
         {/* B inner cutout bottom */}
-        <path
-          d="M64 59H68C71.866 59 75 62.134 75 66V67C75 70.866 71.866 74 68 74H64V59Z"
-          fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'}
-        />
+        <rect x="108" y="90" width="26" height="24" rx="8" fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'} />
 
-        {/* Lightning bolt overlay on B - the key brand element */}
+        {/* Lightning bolt - the key brand element */}
         <path
-          d="M72 36L63 56H71L60 82L68 60H61L72 36Z"
-          fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'}
-          opacity="0.6"
-        />
-        <path
-          d="M73 35L64 55H72L61 81L69 59H62L73 35Z"
-          fill="#fbbf24"
-          opacity="0.35"
+          d="M122 36 L106 88 L120 88 L98 168 L118 104 L104 104 L122 36Z"
+          fill="url(#boltGrad)"
+          opacity="0.9"
         />
 
         {/* Letter I */}
         <path
-          d="M86 32H96V82H86V32Z"
-          fill={colors.primary}
-          opacity="0.95"
+          d="M158 42 L178 42 L178 158 L158 158 Z"
+          fill="url(#logoGrad)"
         />
+        {/* I dot accent */}
+        <circle cx="168" cy="30" r="6" fill={amber} />
 
-        {/* Circuit/wire pattern at shield bottom */}
-        <g opacity="0.5">
-          <line x1="35" y1="92" x2="60" y2="92" stroke={colors.primary} strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="65" y1="92" x2="85" y2="92" stroke={colors.primary} strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="60" cy="92" r="2.5" fill={colors.primary} />
-          <circle cx="35" cy="92" r="1.5" fill={colors.primary} />
-          <circle cx="85" cy="92" r="1.5" fill={colors.primary} />
-          <line x1="45" y1="98" x2="75" y2="98" stroke={colors.primary} strokeWidth="1" strokeLinecap="round" />
-          <circle cx="45" cy="98" r="1.2" fill={colors.primary} />
-          <circle cx="75" cy="98" r="1.2" fill={colors.primary} />
-          <line x1="60" y1="92" x2="60" y2="98" stroke={colors.primary} strokeWidth="1" strokeLinecap="round" />
-        </g>
-
-        {/* Subtle gear teeth on shield edges */}
-        <g opacity="0.3">
-          <rect x="10" y="42" width="4" height="6" rx="1" fill={colors.primary} />
-          <rect x="10" y="54" width="4" height="6" rx="1" fill={colors.primary} />
-          <rect x="10" y="66" width="4" height="6" rx="1" fill={colors.primary} />
-          <rect x="106" y="42" width="4" height="6" rx="1" fill={colors.primary} />
-          <rect x="106" y="54" width="4" height="6" rx="1" fill={colors.primary} />
-          <rect x="106" y="66" width="4" height="6" rx="1" fill={colors.primary} />
+        {/* Bottom circuit line decoration */}
+        <g opacity="0.6">
+          <line x1="30" y1="178" x2="80" y2="178" stroke={amber} strokeWidth="2" strokeLinecap="round" />
+          <circle cx="80" cy="178" r="3" fill={amber} />
+          <line x1="80" y1="178" x2="120" y2="178" stroke={amber} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 4" />
+          <circle cx="120" cy="178" r="3" fill={amber} />
+          <line x1="120" y1="178" x2="170" y2="178" stroke={amber} strokeWidth="2" strokeLinecap="round" />
         </g>
       </svg>
 
@@ -134,10 +105,10 @@ export default function Logo({ size = 'md', variant = 'auto', showText = true }:
             fontWeight: 700,
             letterSpacing: config.letterSpacing,
             textTransform: 'uppercase' as const,
-            color: colors.text,
+            color: dark,
             textAlign: 'center' as const,
             lineHeight: 1.3,
-            maxWidth: `${config.icon * 2.2}px`,
+            maxWidth: `${config.icon * 2.5}px`,
             fontFamily: 'inherit',
           }}
         >
