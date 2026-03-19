@@ -376,13 +376,6 @@ export default function About() {
               ))}
             </motion.ul>
 
-            {/* Skill bars */}
-            <motion.div variants={textReveal}>
-              <h3 className="text-neutral-900 dark:text-white font-semibold text-lg mb-5">Nos Compétences</h3>
-              {skills.map((s, i) => (
-                <SkillBar key={s.label} label={s.label} value={s.value} delay={0.2 + i * 0.15} />
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* ---- Right: Photo collage ---- */}
@@ -440,6 +433,14 @@ export default function About() {
               <p className="text-2xl font-bold">10+</p>
               <p className="text-xs font-medium opacity-90">Ans d&apos;expérience</p>
             </motion.div>
+
+            {/* Skill bars - below images */}
+            <div className="mt-10">
+              <h3 className="text-neutral-900 dark:text-white font-semibold text-lg mb-5">Nos Compétences</h3>
+              {skills.map((s, i) => (
+                <SkillBar key={s.label} label={s.label} value={s.value} delay={0.2 + i * 0.15} />
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

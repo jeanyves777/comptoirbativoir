@@ -1,8 +1,8 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import {
   GraduationCap,
   ShieldCheck,
@@ -16,6 +16,8 @@ import {
   CheckCircle2,
   Target,
   Lightbulb,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -136,31 +138,90 @@ const features = [
 /* ------------------------------------------------------------------ */
 /*  Page Banner                                                         */
 /* ------------------------------------------------------------------ */
+const heroSlides = [
+  { src: '/images/training/training-1.jpg', alt: 'Formation en salle' },
+  { src: '/images/training/training-2.jpg', alt: 'Travaux pratiques' },
+  { src: '/images/training/training-3.jpg', alt: 'Session de groupe' },
+]
+
 function PageBanner() {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], [0, 150])
+  const [current, setCurrent] = useState(0)
+  const [direction, setDirection] = useState(1)
+
+  const next = useCallback(() => {
+    setDirection(1)
+    setCurrent((p) => (p + 1) % heroSlides.length)
+  }, [])
+
+  const prev = useCallback(() => {
+    setDirection(-1)
+    setCurrent((p) => (p - 1 + heroSlides.length) % heroSlides.length)
+  }, [])
+
+  useEffect(() => {
+    const t = setInterval(next, 5000)
+    return () => clearInterval(t)
+  }, [next])
 
   return (
-    <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_60%)]" />
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      {/* Slideshow background */}
+      <div className="absolute inset-0">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const } }}
+            exit={{ scale: 1.05, opacity: 0, transition: { duration: 0.5 } }}
+            className="absolute inset-0"
+          >
+            <img
+              src={heroSlides[current].src}
+              alt={heroSlides[current].alt}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent" />
+      </div>
 
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
+      {/* Arrows */}
+      <button
+        onClick={prev}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 transition-all"
+        aria-label="Precedent"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 transition-all"
+        aria-label="Suivant"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-24">
+      {/* Dots */}
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+        {heroSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-orange-500' : 'w-3 bg-white/40 hover:bg-white/60'}`}
+            aria-label={`Image ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-20 max-w-4xl mx-auto px-6 text-center pt-24">
         <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-widest mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
           Developpez vos competences
@@ -170,9 +231,9 @@ function PageBanner() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">
             Formation
           </span>{' '}
           Professionnelle
@@ -182,14 +243,12 @@ function PageBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-neutral-500 dark:text-neutral-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+          className="text-neutral-200 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
         >
           CBI vous propose des formations professionnelles dans les domaines de l&apos;electricite
           industrielle, la securite, la maintenance et le froid climatisation.
         </motion.p>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent" />
     </section>
   )
 }

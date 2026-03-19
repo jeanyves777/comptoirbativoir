@@ -31,6 +31,15 @@ const iconMap: Record<string, LucideIcon> = {
   Building2,
 }
 
+const serviceImages: Record<string, string> = {
+  'coffret-inverseur': '/images/services/coffret-hero.jpg',
+  'froid-climatisation': '/images/services/climatisation-hero.jpg',
+  'groupe-electrogene': '/images/services/electrogene-hero.jpg',
+  'maintenance-preventive': '/images/services/maintenance-hero.jpg',
+  'module-ecran': '/images/services/module-hero.jpg',
+  'electricite-batiment': '/images/services/electricite-hero.jpg',
+}
+
 /* ------------------------------------------------------------------ */
 /*  Decorative SVG Separator                                            */
 /* ------------------------------------------------------------------ */
@@ -192,24 +201,22 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
           transition={{ duration: 0.7, delay: 0.1 }}
           className={`relative ${reversed ? 'lg:order-2' : ''}`}
         >
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 shadow-sm group">
-            {/* Gradient placeholder with icon */}
-            <div className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-900 dark:via-neutral-900/95 dark:to-neutral-950 flex items-center justify-center">
-              <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' as const }}
-                className="w-32 h-32 rounded-3xl bg-orange-500/10 flex items-center justify-center"
-              >
-                <Icon className="w-16 h-16 text-orange-500/60" />
-              </motion.div>
-            </div>
-
-            {/* Hover glow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* Corner accent */}
-            <div className="absolute top-4 right-4 px-3 py-1 bg-orange-500/20 rounded-full text-orange-600 dark:text-orange-400 text-xs font-semibold backdrop-blur-sm">
-              Service {String(index + 1).padStart(2, '0')}
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
+            <img
+              src={serviceImages[service.id] || service.image}
+              alt={service.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            {/* Icon overlay */}
+            <div className="absolute bottom-4 left-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-orange-500/90 flex items-center justify-center backdrop-blur-sm">
+                <Icon className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-white/90 text-sm font-medium">
+                Service {String(index + 1).padStart(2, '0')}
+              </span>
             </div>
           </div>
         </motion.div>
