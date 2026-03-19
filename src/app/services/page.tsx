@@ -110,7 +110,7 @@ function PageBanner() {
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_60%)]" />
 
       <div
@@ -127,7 +127,7 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
           Ce que nous faisons
@@ -137,7 +137,7 @@ function PageBanner() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           Nos{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -149,14 +149,14 @@ function PageBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+          className="text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
         >
           De l&apos;installation au dépannage, nous couvrons l&apos;ensemble de vos besoins en
           électricité industrielle, climatisation et énergie de secours.
         </motion.p>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent" />
     </section>
   )
 }
@@ -183,7 +183,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
   ]
 
   return (
-    <section ref={ref} id={service.id} className="relative py-20 scroll-mt-24">
+    <section ref={ref} id={service.id} className="relative py-20 scroll-mt-24 bg-white dark:bg-neutral-950">
       <div className={`max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${reversed ? 'lg:direction-rtl' : ''}`}>
         {/* Image / Visual Side */}
         <motion.div
@@ -192,9 +192,9 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
           transition={{ duration: 0.7, delay: 0.1 }}
           className={`relative ${reversed ? 'lg:order-2' : ''}`}
         >
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-900/60 border border-gray-800 group">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 shadow-sm group">
             {/* Gradient placeholder with icon */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900/95 to-gray-950 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-900 dark:via-neutral-900/95 dark:to-neutral-950 flex items-center justify-center">
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' as const }}
@@ -208,7 +208,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Corner accent */}
-            <div className="absolute top-4 right-4 px-3 py-1 bg-amber-500/20 rounded-full text-amber-400 text-xs font-semibold backdrop-blur-sm">
+            <div className="absolute top-4 right-4 px-3 py-1 bg-amber-500/20 rounded-full text-amber-600 dark:text-amber-400 text-xs font-semibold backdrop-blur-sm">
               Service {String(index + 1).padStart(2, '0')}
             </div>
           </div>
@@ -230,9 +230,9 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
             <Icon className="w-7 h-7" />
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{service.title}</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-4">{service.title}</h2>
 
-          <p className="text-gray-400 leading-relaxed mb-6 text-lg">{service.description}</p>
+          <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6 text-lg">{service.description}</p>
 
           <div className="space-y-3 mb-8">
             {features.map((feature, i) => (
@@ -244,7 +244,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
                 className="flex items-center gap-3"
               >
                 <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">{feature}</span>
+                <span className="text-neutral-500 dark:text-neutral-400 text-sm">{feature}</span>
               </motion.div>
             ))}
           </div>
@@ -252,7 +252,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-950 font-semibold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-semibold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Demander un devis
               <ArrowRight className="w-4 h-4" />
@@ -260,7 +260,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
 
             <a
               href={`tel:${companyInfo.phones[0].replace(/\s/g, '')}`}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-400 font-semibold rounded-lg hover:bg-amber-500/5 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-semibold rounded-lg hover:bg-amber-500/5 transition-all duration-300"
             >
               <Phone className="w-4 h-4" />
               Nous appeler
@@ -280,7 +280,7 @@ function CTASection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_50%)]" />
 
       <motion.div
@@ -289,14 +289,14 @@ function CTASection() {
         transition={{ duration: 0.7 }}
         className="relative max-w-4xl mx-auto px-6 text-center"
       >
-        <div className="p-12 rounded-3xl bg-gray-900/60 border border-gray-800 backdrop-blur-sm relative overflow-hidden">
+        <div className="p-12 rounded-3xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm backdrop-blur-sm relative overflow-hidden">
           {/* Animated border glow */}
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10 animate-pulse" />
 
-          <h2 className="relative text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="relative text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
             Un projet en tête ?
           </h2>
-          <p className="relative text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="relative text-neutral-600 dark:text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
             Contactez-nous dès maintenant pour obtenir un devis gratuit et personnalisé.
             Notre équipe est prête à vous accompagner.
           </p>
@@ -304,7 +304,7 @@ function CTASection() {
           <div className="relative flex flex-wrap justify-center gap-4">
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
             >
               Demander un Devis
               <ArrowRight className="w-5 h-5" />
@@ -312,7 +312,7 @@ function CTASection() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-amber-500/30 text-amber-400 font-bold rounded-lg hover:bg-amber-500/5 transition-all duration-300 text-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-bold rounded-lg hover:bg-amber-500/5 transition-all duration-300 text-lg"
             >
               Nous contacter
             </Link>
@@ -330,7 +330,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="bg-white dark:bg-neutral-950">
         <PageBanner />
 
         {services.map((service, index) => (
@@ -341,7 +341,7 @@ export default function ServicesPage() {
               reversed={index % 2 !== 0}
             />
             {index < services.length - 1 && (
-              <div className="max-w-5xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6 bg-white dark:bg-neutral-950">
                 <CircuitSeparator flip={index % 2 !== 0} />
               </div>
             )}

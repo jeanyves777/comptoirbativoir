@@ -17,7 +17,7 @@ function PageBanner() {
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_60%)]" />
 
       <div
@@ -34,7 +34,7 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-50 dark:bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
           Restons en contact
@@ -44,7 +44,7 @@ function PageBanner() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           Contactez-
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -56,14 +56,14 @@ function PageBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+          className="text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
         >
           Notre équipe est à votre écoute pour toute demande de renseignement, devis ou intervention.
           N&apos;hésitez pas à nous contacter.
         </motion.p>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent" />
     </section>
   )
 }
@@ -120,19 +120,19 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.06 }}
-      className="border border-gray-800 rounded-xl overflow-hidden hover:border-amber-500/20 transition-colors duration-300"
+      className="border border-neutral-200 dark:border-neutral-700 rounded-xl overflow-hidden hover:border-amber-500/20 dark:hover:border-amber-500/20 transition-colors duration-300"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-5 md:p-6 text-left bg-gray-900/40 hover:bg-gray-900/60 transition-colors duration-200"
+        className="w-full flex items-center justify-between p-5 md:p-6 text-left bg-neutral-50 dark:bg-neutral-800/40 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-colors duration-200"
       >
-        <span className="text-white font-medium pr-4">{item.question}</span>
+        <span className="text-neutral-900 dark:text-white font-medium pr-4">{item.question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' as const }}
           className="flex-shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-amber-400" />
+          <ChevronDown className="w-5 h-5 text-amber-500 dark:text-amber-400" />
         </motion.div>
       </button>
 
@@ -146,7 +146,7 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
             className="overflow-hidden"
           >
             <div className="px-5 md:px-6 pb-5 md:pb-6 pt-1">
-              <p className="text-gray-400 leading-relaxed text-sm">{item.answer}</p>
+              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-sm">{item.answer}</p>
             </div>
           </motion.div>
         )}
@@ -160,7 +160,7 @@ function FAQSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-900 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.05),transparent_60%)]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 
@@ -171,16 +171,16 @@ function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-50 dark:bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-3">
             Questions{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
               fréquentes
             </span>
           </h2>
-          <p className="text-gray-400">
+          <p className="text-neutral-600 dark:text-neutral-300">
             Retrouvez les réponses aux questions les plus posées par nos clients.
           </p>
         </motion.div>

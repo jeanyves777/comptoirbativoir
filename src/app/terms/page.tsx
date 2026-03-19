@@ -40,7 +40,7 @@ export default function TermsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <main className="min-h-screen bg-white dark:bg-neutral-950">
         {/* Hero Banner */}
         <div className="relative pt-24 pb-16 overflow-hidden">
           <div
@@ -62,10 +62,10 @@ export default function TermsPage() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6">
                 <FileText className="w-8 h-8 text-amber-500" />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
                 Conditions Générales d&apos;Utilisation
               </h1>
-              <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-lg text-neutral-500 dark:text-neutral-400">
                 Dernière mise à jour : {lastUpdated}
               </p>
             </motion.div>
@@ -78,10 +78,9 @@ export default function TermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-16 p-6 rounded-xl border"
-            style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)' }}
+            className="mb-16 p-6 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700"
           >
-            <h2 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-lg font-semibold mb-4 text-neutral-900 dark:text-white">
               Table des matières
             </h2>
             <ul className="space-y-2">
@@ -89,8 +88,7 @@ export default function TermsPage() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 hover:text-amber-500"
-                    style={{ color: 'var(--text-secondary)' }}
+                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-amber-500"
                   >
                     <ChevronRight size={14} className="text-amber-500/60" />
                     <span className="text-amber-500/60 font-mono text-xs">Article {index + 1}</span>
@@ -102,9 +100,9 @@ export default function TermsPage() {
           </motion.nav>
 
           {/* Content */}
-          <div className="legal-content" style={{ color: 'var(--text-secondary)' }}>
+          <div className="legal-content text-neutral-600 dark:text-neutral-300">
             <AnimatedSection id="objet">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 1 —</span> Objet
               </h2>
               <p className="leading-relaxed mb-4">
@@ -124,7 +122,7 @@ export default function TermsPage() {
             </AnimatedSection>
 
             <AnimatedSection id="acces">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 2 —</span> Accès au Site
               </h2>
               <p className="leading-relaxed mb-4">
@@ -146,7 +144,7 @@ export default function TermsPage() {
             </AnimatedSection>
 
             <AnimatedSection id="propriete">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 3 —</span> Propriété Intellectuelle
               </h2>
               <p className="leading-relaxed mb-4">
@@ -170,7 +168,7 @@ export default function TermsPage() {
             </AnimatedSection>
 
             <AnimatedSection id="responsabilite">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 4 —</span> Responsabilité
               </h2>
               <p className="leading-relaxed mb-4">
@@ -197,7 +195,7 @@ export default function TermsPage() {
             </AnimatedSection>
 
             <AnimatedSection id="liens">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 5 —</span> Liens Hypertextes
               </h2>
               <p className="leading-relaxed mb-4">
@@ -208,7 +206,7 @@ export default function TermsPage() {
               <p className="leading-relaxed mb-4">
                 La mise en place de liens hypertextes vers le Site est soumise à l&apos;autorisation préalable et écrite
                 de CBI. Toute demande d&apos;autorisation doit être adressée à l&apos;adresse e-mail suivante :{' '}
-                <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-500 hover:text-amber-400">
+                <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
                   comptoirbatisseurivoiriens@gmail.com
                 </a>.
               </p>
@@ -219,7 +217,7 @@ export default function TermsPage() {
             </AnimatedSection>
 
             <AnimatedSection id="droit">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 6 —</span> Droit Applicable
               </h2>
               <p className="leading-relaxed mb-4">
@@ -240,7 +238,7 @@ export default function TermsPage() {
             </AnimatedSection>
 
             <AnimatedSection id="litiges">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 7 —</span> Litiges
               </h2>
               <p className="leading-relaxed mb-4">
@@ -256,17 +254,17 @@ export default function TermsPage() {
               <p className="leading-relaxed">
                 Pour toute question relative aux présentes CGU, vous pouvez nous contacter :
               </p>
-              <div className="mt-4 p-6 rounded-xl border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+              <div className="mt-4 p-6 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
                 <p className="mb-2"><strong>COMPTOIR DES BATISSEURS IVOIRIENS</strong></p>
                 <p className="mb-1">11 BP 112 Abidjan 11, Angré non loin de la cité GESTOCI</p>
                 <p className="mb-1">Abidjan, Côte d&apos;Ivoire</p>
                 <p className="mb-1">
                   Téléphone :{' '}
-                  <a href="tel:+2252722266533" className="text-amber-500 hover:text-amber-400">+225 27 22 26 65 33</a>
+                  <a href="tel:+2252722266533" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 27 22 26 65 33</a>
                 </p>
                 <p>
                   E-mail :{' '}
-                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-500 hover:text-amber-400">
+                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
                     comptoirbatisseurivoiriens@gmail.com
                   </a>
                 </p>

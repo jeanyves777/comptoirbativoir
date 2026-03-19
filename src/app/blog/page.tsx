@@ -81,9 +81,9 @@ export default function BlogPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-dark">
+      <main className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-dark-light to-dark pt-32 pb-20">
+        <section className="relative overflow-hidden bg-gradient-to-b from-neutral-100 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950 pt-32 pb-20">
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-[120px]" />
             <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-[150px]" />
@@ -98,10 +98,10 @@ export default function BlogPage() {
                 <BookOpen className="w-4 h-4" />
                 Blog & Actualites
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-[family-name:var(--font-heading)] mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white font-[family-name:var(--font-heading)] mb-4">
                 Notre <span className="text-primary">Blog</span>
               </h1>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              <p className="text-neutral-500 dark:text-neutral-400 text-lg max-w-2xl mx-auto">
                 Retrouvez nos articles, conseils et actualites sur la maintenance industrielle,
                 la climatisation et les solutions energetiques.
               </p>
@@ -115,18 +115,18 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-dark-light border border-dark-lighter rounded-2xl p-4 md:p-6"
+            className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-4 md:p-6"
           >
             <div className="flex flex-col md:flex-row gap-4 items-center">
               {/* Search */}
               <div className="relative flex-1 w-full">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 dark:text-neutral-500" />
                 <input
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Rechercher un article..."
-                  className="w-full bg-dark border border-dark-lighter rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  className="w-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl pl-12 pr-4 py-3 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                 />
               </div>
 
@@ -138,8 +138,8 @@ export default function BlogPage() {
                     onClick={() => setActiveCategory(cat)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                       activeCategory === cat
-                        ? 'bg-primary text-dark'
-                        : 'bg-dark border border-dark-lighter text-gray-400 hover:text-white hover:border-gray-600'
+                        ? 'bg-primary text-white dark:text-neutral-950'
+                        : 'bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:border-neutral-400 dark:hover:border-neutral-600'
                     }`}
                   >
                     {cat}
@@ -162,11 +162,11 @@ export default function BlogPage() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <BookOpen className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-              <h3 className="text-xl text-gray-400 font-semibold mb-2">
+              <BookOpen className="w-16 h-16 text-neutral-300 dark:text-neutral-600 mx-auto mb-4" />
+              <h3 className="text-xl text-neutral-500 dark:text-neutral-400 font-semibold mb-2">
                 Aucun article trouve
               </h3>
-              <p className="text-gray-500">
+              <p className="text-neutral-400 dark:text-neutral-500">
                 Essayez de modifier vos criteres de recherche.
               </p>
             </motion.div>
@@ -180,9 +180,9 @@ export default function BlogPage() {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                 >
                   <Link href={`/blog/${post.slug}`} className="group block">
-                    <div className="bg-dark-light border border-dark-lighter rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
+                    <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
                       {/* Image */}
-                      <div className="relative h-56 overflow-hidden bg-dark-lighter">
+                      <div className="relative h-56 overflow-hidden bg-neutral-100 dark:bg-neutral-700">
                         {post.image ? (
                           <Image
                             src={post.image}
@@ -192,11 +192,11 @@ export default function BlogPage() {
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center">
-                            <BookOpen className="w-12 h-12 text-gray-700" />
+                            <BookOpen className="w-12 h-12 text-neutral-300 dark:text-neutral-600" />
                           </div>
                         )}
                         <div className="absolute top-4 left-4">
-                          <span className="bg-primary text-dark text-xs font-bold px-3 py-1 rounded-full">
+                          <span className="bg-primary text-white dark:text-neutral-950 text-xs font-bold px-3 py-1 rounded-full">
                             {post.category}
                           </span>
                         </div>
@@ -204,7 +204,7 @@ export default function BlogPage() {
 
                       {/* Content */}
                       <div className="p-6 flex-1 flex flex-col">
-                        <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                        <div className="flex items-center gap-4 text-xs text-neutral-400 dark:text-neutral-500 mb-3">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3.5 h-3.5" />
                             {formatDate(post.createdAt)}
@@ -219,11 +219,11 @@ export default function BlogPage() {
                           </span>
                         </div>
 
-                        <h2 className="text-xl font-bold text-white group-hover:text-primary transition-colors mb-3 font-[family-name:var(--font-heading)] line-clamp-2">
+                        <h2 className="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-primary transition-colors mb-3 font-[family-name:var(--font-heading)] line-clamp-2">
                           {post.title}
                         </h2>
 
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
+                        <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
                           {post.excerpt}
                         </p>
 
@@ -232,7 +232,7 @@ export default function BlogPage() {
                           {post.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="flex items-center gap-1 text-xs text-gray-500 bg-dark px-2 py-1 rounded-md"
+                              className="flex items-center gap-1 text-xs text-neutral-500 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded-md"
                             >
                               <Tag className="w-3 h-3" />
                               {tag}

@@ -33,7 +33,7 @@ function PageBanner() {
 
   return (
     <section ref={ref} className="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_60%)]" />
 
       <div
@@ -50,7 +50,7 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
           Gratuit et sans engagement
@@ -60,7 +60,7 @@ function PageBanner() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           Demander un{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -72,14 +72,14 @@ function PageBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+          className="text-neutral-500 dark:text-neutral-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
         >
-          Décrivez votre projet et recevez un devis personnalisé sous 48 heures.
-          Notre équipe d&apos;experts analysera votre demande en détail.
+          Decrivez votre projet et recevez un devis personnalise sous 48 heures.
+          Notre equipe d&apos;experts analysera votre demande en detail.
         </motion.p>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent" />
     </section>
   )
 }
@@ -111,14 +111,14 @@ function FloatingField({
   error,
 }: FloatingFieldProps) {
   const baseClass =
-    'peer w-full bg-gray-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-colors'
+    'peer w-full bg-white dark:bg-neutral-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 text-neutral-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-colors'
   const borderClass = error
     ? 'border-red-500'
-    : 'border-gray-700 focus:border-amber-500'
+    : 'border-neutral-300 dark:border-neutral-600 focus:border-amber-500'
 
   return (
     <div className="relative">
-      <div className="absolute left-3.5 top-4 text-gray-500 peer-focus:text-amber-400 transition-colors z-10">
+      <div className="absolute left-3.5 top-4 text-neutral-400 dark:text-neutral-500 peer-focus:text-amber-500 dark:peer-focus:text-amber-400 transition-colors z-10">
         {icon}
       </div>
       {textarea ? (
@@ -144,7 +144,7 @@ function FloatingField({
       )}
       <label
         htmlFor={id}
-        className="absolute left-11 top-1.5 text-xs text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-amber-400 transition-all pointer-events-none"
+        className="absolute left-11 top-1.5 text-xs text-neutral-400 dark:text-neutral-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-amber-500 dark:peer-focus:text-amber-400 transition-all pointer-events-none"
       >
         {label}
       </label>
@@ -167,24 +167,24 @@ interface SelectFieldProps {
 }
 
 function SelectField({ id, label, icon, options, value, onChange, error }: SelectFieldProps) {
-  const borderClass = error ? 'border-red-500' : 'border-gray-700 focus:border-amber-500'
+  const borderClass = error ? 'border-red-500' : 'border-neutral-300 dark:border-neutral-600 focus:border-amber-500'
 
   return (
     <div className="relative">
-      <div className="absolute left-3.5 top-4 text-gray-500 z-10">{icon}</div>
+      <div className="absolute left-3.5 top-4 text-neutral-400 dark:text-neutral-500 z-10">{icon}</div>
       <select
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className={`w-full bg-gray-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-colors appearance-none ${borderClass} ${
-          !value ? 'text-gray-500' : ''
+        className={`w-full bg-white dark:bg-neutral-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 pr-10 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-colors appearance-none ${borderClass} ${
+          !value ? 'text-neutral-400 dark:text-neutral-500' : ''
         }`}
       >
-        <option value="" className="bg-gray-900 text-gray-500">
+        <option value="" className="bg-white dark:bg-neutral-900 text-neutral-400 dark:text-neutral-500">
           {label}
         </option>
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value} className="bg-gray-900 text-white">
+          <option key={opt.value} value={opt.value} className="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white">
             {opt.label}
           </option>
         ))}
@@ -192,12 +192,12 @@ function SelectField({ id, label, icon, options, value, onChange, error }: Selec
       <label
         htmlFor={id}
         className={`absolute left-11 text-xs pointer-events-none transition-all ${
-          value ? 'top-1.5 text-amber-400' : 'top-1.5 text-gray-500'
+          value ? 'top-1.5 text-amber-500 dark:text-amber-400' : 'top-1.5 text-neutral-400 dark:text-neutral-500'
         }`}
       >
         {label}
       </label>
-      <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
+      <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 dark:text-neutral-500 pointer-events-none" />
       {error && <p className="mt-1 text-xs text-red-400">{error}</p>}
     </div>
   )
@@ -212,17 +212,17 @@ function ContactSidePanel() {
 
   const contactItems = [
     {
-      icon: <Phone className="w-5 h-5 text-amber-400" />,
-      title: 'Téléphone',
+      icon: <Phone className="w-5 h-5 text-amber-500 dark:text-amber-400" />,
+      title: 'Telephone',
       lines: companyInfo.phones,
     },
     {
-      icon: <Mail className="w-5 h-5 text-amber-400" />,
+      icon: <Mail className="w-5 h-5 text-amber-500 dark:text-amber-400" />,
       title: 'Email',
       lines: companyInfo.emails,
     },
     {
-      icon: <MapPin className="w-5 h-5 text-amber-400" />,
+      icon: <MapPin className="w-5 h-5 text-amber-500 dark:text-amber-400" />,
       title: 'Adresse',
       lines: [companyInfo.address],
     },
@@ -236,9 +236,9 @@ function ContactSidePanel() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <h3 className="text-xl font-bold text-white mb-2">Besoin d&apos;aide ?</h3>
-        <p className="text-gray-400 text-sm leading-relaxed">
-          Notre équipe est disponible pour vous accompagner dans la définition de votre projet.
+        <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">Besoin d&apos;aide ?</h3>
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">
+          Notre equipe est disponible pour vous accompagner dans la definition de votre projet.
         </p>
       </motion.div>
 
@@ -249,15 +249,15 @@ function ContactSidePanel() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-          className="group flex items-start gap-4 p-4 rounded-xl bg-gray-900/60 border border-gray-800 hover:border-amber-500/30 transition-colors duration-300"
+          className="group flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 transition-colors duration-300"
         >
           <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
             {item.icon}
           </div>
           <div>
-            <h4 className="text-white font-semibold text-sm mb-1">{item.title}</h4>
+            <h4 className="text-neutral-900 dark:text-white font-semibold text-sm mb-1">{item.title}</h4>
             {item.lines.map((line, j) => (
-              <p key={j} className="text-gray-400 text-sm">
+              <p key={j} className="text-neutral-500 dark:text-neutral-400 text-sm">
                 {line}
               </p>
             ))}
@@ -270,21 +270,21 @@ function ContactSidePanel() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="p-5 rounded-xl bg-gray-900/40 border border-gray-800"
+        className="p-5 rounded-xl bg-neutral-50 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-700"
       >
-        <h4 className="text-white font-semibold mb-4">Comment ça marche ?</h4>
+        <h4 className="text-neutral-900 dark:text-white font-semibold mb-4">Comment ca marche ?</h4>
         <div className="space-y-4">
           {[
             { step: '01', text: 'Remplissez le formulaire de devis' },
-            { step: '02', text: 'Notre équipe analyse votre demande' },
+            { step: '02', text: 'Notre equipe analyse votre demande' },
             { step: '03', text: 'Recevez votre devis sous 48h' },
-            { step: '04', text: 'Validation et début des travaux' },
+            { step: '04', text: 'Validation et debut des travaux' },
           ].map((item, i) => (
             <div key={item.step} className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold flex items-center justify-center">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold flex items-center justify-center">
                 {item.step}
               </span>
-              <span className="text-gray-400 text-sm pt-1">{item.text}</span>
+              <span className="text-neutral-500 dark:text-neutral-400 text-sm pt-1">{item.text}</span>
             </div>
           ))}
         </div>
@@ -323,9 +323,9 @@ function QuoteFormSection() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       errs.email = 'Email invalide'
     }
-    if (!form.phone.trim()) errs.phone = 'Le téléphone est requis'
-    if (!form.service) errs.service = 'Sélectionnez un service'
-    if (!form.description.trim()) errs.description = 'Décrivez votre projet'
+    if (!form.phone.trim()) errs.phone = 'Le telephone est requis'
+    if (!form.service) errs.service = 'Selectionnez un service'
+    if (!form.description.trim()) errs.description = 'Decrivez votre projet'
     setErrors(errs)
     return Object.keys(errs).length === 0
   }
@@ -369,20 +369,20 @@ function QuoteFormSection() {
     { value: '2m-5m', label: '2 000 000 - 5 000 000 FCFA' },
     { value: '5m-10m', label: '5 000 000 - 10 000 000 FCFA' },
     { value: 'plus-10m', label: 'Plus de 10 000 000 FCFA' },
-    { value: 'non-defini', label: 'Budget non défini' },
+    { value: 'non-defini', label: 'Budget non defini' },
   ]
 
   const timelineOptions = [
     { value: 'urgent', label: 'Urgent (moins d\'une semaine)' },
-    { value: '1-2-semaines', label: '1 à 2 semaines' },
+    { value: '1-2-semaines', label: '1 a 2 semaines' },
     { value: '1-mois', label: '1 mois' },
-    { value: '2-3-mois', label: '2 à 3 mois' },
+    { value: '2-3-mois', label: '2 a 3 mois' },
     { value: 'plus-3-mois', label: 'Plus de 3 mois' },
     { value: 'flexible', label: 'Flexible' },
   ]
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(245,158,11,0.06),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.03),transparent_50%)]" />
 
@@ -396,12 +396,12 @@ function QuoteFormSection() {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-8 md:p-10 rounded-2xl bg-gray-900/40 border border-gray-800 backdrop-blur-sm space-y-6"
+              className="p-8 md:p-10 rounded-2xl bg-white dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-700 backdrop-blur-sm space-y-6"
             >
               <div>
-                <h2 className="text-2xl font-bold text-white mb-1">Votre projet</h2>
-                <p className="text-gray-500 text-sm">
-                  Remplissez le formulaire ci-dessous pour recevoir votre devis personnalisé.
+                <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-1">Votre projet</h2>
+                <p className="text-neutral-500 dark:text-neutral-500 text-sm">
+                  Remplissez le formulaire ci-dessous pour recevoir votre devis personnalise.
                 </p>
               </div>
 
@@ -438,7 +438,7 @@ function QuoteFormSection() {
                 />
                 <FloatingField
                   id="phone"
-                  label="Téléphone *"
+                  label="Telephone *"
                   icon={<Phone className="w-4 h-4" />}
                   type="tel"
                   required
@@ -451,7 +451,7 @@ function QuoteFormSection() {
               {/* Service selection */}
               <SelectField
                 id="service"
-                label="Service souhaité *"
+                label="Service souhaite *"
                 icon={<FileText className="w-4 h-4" />}
                 options={serviceOptions}
                 value={form.service}
@@ -475,7 +475,7 @@ function QuoteFormSection() {
               <div className="grid sm:grid-cols-2 gap-5">
                 <SelectField
                   id="budget"
-                  label="Budget estimé"
+                  label="Budget estime"
                   icon={<DollarSign className="w-4 h-4" />}
                   options={budgetOptions}
                   value={form.budget}
@@ -483,7 +483,7 @@ function QuoteFormSection() {
                 />
                 <SelectField
                   id="timeline"
-                  label="Délai souhaité"
+                  label="Delai souhaite"
                   icon={<Clock className="w-4 h-4" />}
                   options={timelineOptions}
                   value={form.timeline}
@@ -498,7 +498,7 @@ function QuoteFormSection() {
                   disabled={loading}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-950 font-bold rounded-lg overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed transition-shadow hover:shadow-lg hover:shadow-amber-500/25"
+                  className="relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white dark:text-neutral-950 font-bold rounded-lg overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed transition-shadow hover:shadow-lg hover:shadow-amber-500/25"
                 >
                   {/* Shimmer */}
                   <motion.span
@@ -522,8 +522,8 @@ function QuoteFormSection() {
                   </span>
                 </motion.button>
 
-                <p className="text-gray-500 text-xs">
-                  * Champs obligatoires. Réponse sous 48h.
+                <p className="text-neutral-500 dark:text-neutral-500 text-xs">
+                  * Champs obligatoires. Reponse sous 48h.
                 </p>
               </div>
 
@@ -534,14 +534,14 @@ function QuoteFormSection() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-sm flex items-start gap-3"
+                    className="p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm flex items-start gap-3"
                   >
                     <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold">Demande envoyée avec succès !</p>
-                      <p className="text-green-400/70 mt-1">
-                        Nous avons bien reçu votre demande de devis et vous répondrons dans les
-                        plus brefs délais.
+                      <p className="font-semibold">Demande envoyee avec succes !</p>
+                      <p className="text-green-600/70 dark:text-green-400/70 mt-1">
+                        Nous avons bien recu votre demande de devis et vous repondrons dans les
+                        plus brefs delais.
                       </p>
                     </div>
                   </motion.div>

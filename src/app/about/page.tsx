@@ -311,7 +311,7 @@ function PageBanner() {
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Parallax background */}
-      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_60%)]" />
 
       {/* Animated grid */}
@@ -329,7 +329,7 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
           Qui sommes-nous
@@ -339,7 +339,7 @@ function PageBanner() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           La{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
@@ -351,14 +351,14 @@ function PageBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+          className="text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
         >
           {companyInfo.description}
         </motion.p>
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent" />
     </section>
   )
 }
@@ -416,7 +416,7 @@ function Timeline() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-white dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.05),transparent_60%)]" />
 
       <div className="relative max-w-6xl mx-auto px-6">
@@ -426,10 +426,10 @@ function Timeline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Notre Parcours
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Années de{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
               Croissance
@@ -464,20 +464,20 @@ function Timeline() {
                   {/* Content */}
                   <div className={`md:w-[calc(50%-2rem)] ${isLeft ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
                     <div
-                      className={`p-6 rounded-xl bg-gray-900/60 border border-gray-800 hover:border-amber-500/30 transition-colors duration-300 ${
+                      className={`p-6 rounded-xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 transition-colors duration-300 ${
                         isLeft ? 'md:ml-auto' : 'md:mr-auto'
                       }`}
                     >
-                      <span className="inline-block px-3 py-1 bg-amber-500/10 text-amber-400 text-sm font-bold rounded-full mb-3">
+                      <span className="inline-block px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-bold rounded-full mb-3">
                         {milestone.year}
                       </span>
-                      <h3 className="text-xl font-bold text-white mb-2">{milestone.title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{milestone.description}</p>
+                      <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">{milestone.title}</h3>
+                      <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
 
                   {/* Center dot */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gray-900 border-2 border-amber-500/50 items-center justify-center z-10">
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white dark:bg-neutral-900 border-2 border-amber-500/50 items-center justify-center z-10">
                     <Icon className="w-5 h-5 text-amber-400" />
                   </div>
 
@@ -501,7 +501,7 @@ function DetailedAbout() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.06),transparent_60%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -512,20 +512,20 @@ function DetailedAbout() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6">
               À propos de CBI
             </span>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
               Notre{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
                 Histoire
               </span>
             </h2>
 
-            <div className="space-y-5 text-gray-400 leading-relaxed">
+            <div className="space-y-5 text-neutral-600 dark:text-neutral-300 leading-relaxed">
               <p>{companyInfo.about}</p>
-              <p className="text-amber-400/90 font-medium border-l-2 border-amber-500/50 pl-4">
+              <p className="text-amber-600 dark:text-amber-400/90 font-medium border-l-2 border-amber-500/50 pl-4">
                 {companyInfo.mission}
               </p>
             </div>
@@ -542,10 +542,10 @@ function DetailedAbout() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                  className="p-4 rounded-lg bg-gray-900/60 border border-gray-800"
+                  className="p-4 rounded-lg bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700"
                 >
-                  <div className="text-2xl font-bold text-amber-400">{stat.value}</div>
-                  <div className="text-gray-500 text-sm">{stat.label}</div>
+                  <div className="text-2xl font-bold text-amber-500">{stat.value}</div>
+                  <div className="text-neutral-500 dark:text-neutral-400 text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -587,7 +587,7 @@ function ExpertiseSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-white dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.04),transparent_50%)]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 
@@ -598,10 +598,10 @@ function ExpertiseSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Nos Domaines
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Nos{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
               Expertises
@@ -622,7 +622,7 @@ function ExpertiseSection() {
                 key={item}
                 variants={fadeInUp}
                 custom={i}
-                className="group flex items-center gap-4 p-4 rounded-xl bg-gray-900/40 border border-gray-800 hover:border-amber-500/30 hover:bg-gray-900/60 transition-all duration-300"
+                className="group flex items-center gap-4 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -631,7 +631,7 @@ function ExpertiseSection() {
                 >
                   <Icon className="w-5 h-5 text-amber-400" />
                 </motion.div>
-                <span className="text-gray-300 text-sm font-medium group-hover:text-white transition-colors">
+                <span className="text-neutral-600 dark:text-neutral-300 text-sm font-medium group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
                   {item}
                 </span>
               </motion.div>
@@ -682,7 +682,7 @@ function ValuesSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(245,158,11,0.05),transparent_60%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -692,10 +692,10 @@ function ValuesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Ce qui nous guide
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Nos{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
               Valeurs
@@ -717,7 +717,7 @@ function ValuesSection() {
               >
                 <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
-                <div className="relative h-full rounded-2xl bg-gray-900/60 border border-gray-800 p-8 text-center overflow-hidden group-hover:border-amber-500/30 transition-colors duration-300">
+                <div className="relative h-full rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 p-8 text-center overflow-hidden group-hover:border-amber-500/30 transition-colors duration-300">
                   {/* Glow overlay */}
                   <div className="absolute inset-0 bg-amber-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -730,10 +730,10 @@ function ValuesSection() {
                     <Icon className="w-7 h-7 text-amber-400" />
                   </motion.div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
                     {value.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{value.description}</p>
                 </div>
               </motion.div>
             )

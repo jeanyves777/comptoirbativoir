@@ -25,40 +25,40 @@ import Footer from '@/components/Footer'
 /* ------------------------------------------------------------------ */
 const trainingPrograms = [
   {
-    title: 'Sécurité Électrique',
+    title: 'Securite Electrique',
     description:
-      'Formation complète aux normes de sécurité électrique. Habilitation électrique, gestes de premiers secours, prévention des risques et conduite à tenir en cas d\'incident.',
+      'Formation complete aux normes de securite electrique. Habilitation electrique, gestes de premiers secours, prevention des risques et conduite a tenir en cas d\'incident.',
     icon: ShieldCheck,
     duration: '5 jours',
     level: 'Tous niveaux',
     topics: [
       'Normes NF C 18-510',
       'Habilitations B0, B1, B2, BR, BC',
-      'Premiers secours électriques',
+      'Premiers secours electriques',
       'Analyse des risques',
     ],
   },
   {
-    title: 'Installation Électrique',
+    title: 'Installation Electrique',
     description:
-      'Maîtrisez les techniques d\'installation électrique industrielle et bâtiment. Câblage, mise en conformité, lecture de schémas et dimensionnement des installations.',
+      'Maitrisez les techniques d\'installation electrique industrielle et batiment. Cablage, mise en conformite, lecture de schemas et dimensionnement des installations.',
     icon: Zap,
     duration: '10 jours',
-    level: 'Intermédiaire',
+    level: 'Intermediaire',
     topics: [
-      'Lecture de schémas électriques',
-      'Câblage d\'armoires industrielles',
+      'Lecture de schemas electriques',
+      'Cablage d\'armoires industrielles',
       'Dimensionnement des installations',
-      'Mise en conformité NF C 15-100',
+      'Mise en conformite NF C 15-100',
     ],
   },
   {
-    title: 'Maintenance Préventive',
+    title: 'Maintenance Preventive',
     description:
-      'Apprenez les méthodes de maintenance préventive et corrective pour garantir la fiabilité de vos équipements électriques et prolonger leur durée de vie.',
+      'Apprenez les methodes de maintenance preventive et corrective pour garantir la fiabilite de vos equipements electriques et prolonger leur duree de vie.',
     icon: Wrench,
     duration: '7 jours',
-    level: 'Avancé',
+    level: 'Avance',
     topics: [
       'Planification de maintenance',
       'Diagnostic de pannes',
@@ -67,40 +67,40 @@ const trainingPrograms = [
     ],
   },
   {
-    title: 'Groupes Électrogènes',
+    title: 'Groupes Electrogenes',
     description:
-      'Formation spécialisée sur l\'installation, la mise en service et la maintenance des groupes électrogènes de toutes puissances et marques.',
+      'Formation specialisee sur l\'installation, la mise en service et la maintenance des groupes electrogenes de toutes puissances et marques.',
     icon: Target,
     duration: '5 jours',
-    level: 'Intermédiaire',
+    level: 'Intermediaire',
     topics: [
       'Principes de fonctionnement',
       'Coffrets inverseurs et ATS',
-      'Entretien préventif',
-      'Dépannage et diagnostic',
+      'Entretien preventif',
+      'Depannage et diagnostic',
     ],
   },
   {
     title: 'Froid & Climatisation',
     description:
-      'Formation aux techniques de froid et climatisation : installation, réglage, maintenance et dépannage des systèmes split, VRV/VRF et centrales de traitement d\'air.',
+      'Formation aux techniques de froid et climatisation : installation, reglage, maintenance et depannage des systemes split, VRV/VRF et centrales de traitement d\'air.',
     icon: Lightbulb,
     duration: '10 jours',
-    level: 'Intermédiaire',
+    level: 'Intermediaire',
     topics: [
       'Cycle frigorifique',
       'Installation split et multi-split',
-      'Manipulation des fluides frigorigènes',
-      'Maintenance des systèmes CTA',
+      'Manipulation des fluides frigorigenes',
+      'Maintenance des systemes CTA',
     ],
   },
   {
-    title: 'Supervision & Contrôle',
+    title: 'Supervision & Controle',
     description:
-      'Initiez-vous aux techniques de supervision industrielle, aux automates programmables et aux systèmes de contrôle-commande modernes.',
+      'Initiez-vous aux techniques de supervision industrielle, aux automates programmables et aux systemes de controle-commande modernes.',
     icon: BookOpen,
     duration: '7 jours',
-    level: 'Avancé',
+    level: 'Avance',
     topics: [
       'Automates programmables (API)',
       'Interfaces homme-machine (IHM)',
@@ -113,8 +113,8 @@ const trainingPrograms = [
 const features = [
   {
     icon: Users,
-    title: 'Formateurs Expérimentés',
-    description: 'Nos formateurs sont des professionnels de terrain avec plus de 15 ans d\'expérience.',
+    title: 'Formateurs Experimentes',
+    description: 'Nos formateurs sont des professionnels de terrain avec plus de 15 ans d\'experience.',
   },
   {
     icon: Award,
@@ -124,12 +124,12 @@ const features = [
   {
     icon: Clock,
     title: 'Horaires Flexibles',
-    description: 'Des sessions adaptées à votre emploi du temps, en semaine ou le week-end.',
+    description: 'Des sessions adaptees a votre emploi du temps, en semaine ou le week-end.',
   },
   {
     icon: GraduationCap,
     title: 'Pratique Intensive',
-    description: '70% de travaux pratiques pour une maîtrise concrète des compétences.',
+    description: '70% de travaux pratiques pour une maitrise concrete des competences.',
   },
 ]
 
@@ -143,7 +143,7 @@ function PageBanner() {
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+      <motion.div style={{ y }} className="absolute inset-0 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_60%)]" />
 
       <div
@@ -160,17 +160,17 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-          Développez vos compétences
+          Developpez vos competences
         </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
             Formation
@@ -182,14 +182,14 @@ function PageBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+          className="text-neutral-500 dark:text-neutral-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
         >
-          CBI vous propose des formations professionnelles dans les domaines de l&apos;électricité
-          industrielle, la sécurité, la maintenance et le froid climatisation.
+          CBI vous propose des formations professionnelles dans les domaines de l&apos;electricite
+          industrielle, la securite, la maintenance et le froid climatisation.
         </motion.p>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent" />
     </section>
   )
 }
@@ -202,7 +202,7 @@ function FeaturesGrid() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-20 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-20 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.05),transparent_60%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -220,18 +220,18 @@ function FeaturesGrid() {
               >
                 <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
-                <div className="relative h-full p-6 rounded-2xl bg-gray-900/60 border border-gray-800 group-hover:border-amber-500/30 transition-colors duration-300 text-center">
+                <div className="relative h-full p-6 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 group-hover:border-amber-500/30 transition-colors duration-300 text-center">
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500/10 text-amber-400 mb-4"
+                    className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 mb-4"
                   >
                     <Icon className="w-7 h-7" />
                   </motion.div>
-                  <h3 className="text-white font-bold mb-2 group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-neutral-900 dark:text-white font-bold mb-2 group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{feature.description}</p>
                 </div>
               </motion.div>
             )
@@ -250,7 +250,7 @@ function TrainingPrograms() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-white dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.06),transparent_60%)]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 
@@ -261,18 +261,18 @@ function TrainingPrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Nos Programmes
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Programmes de{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
               Formation
             </span>
           </h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Des parcours structurés pour renforcer les compétences de vos équipes dans les
-            métiers de l&apos;électricité et du génie climatique.
+          <p className="mt-4 text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
+            Des parcours structures pour renforcer les competences de vos equipes dans les
+            metiers de l&apos;electricite et du genie climatique.
           </p>
         </motion.div>
 
@@ -290,7 +290,7 @@ function TrainingPrograms() {
               >
                 <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
-                <div className="relative h-full rounded-2xl bg-gray-900/60 border border-gray-800 p-7 flex flex-col gap-4 overflow-hidden group-hover:border-amber-500/30 transition-colors duration-300">
+                <div className="relative h-full rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 p-7 flex flex-col gap-4 overflow-hidden group-hover:border-amber-500/30 transition-colors duration-300">
                   {/* Hover glow */}
                   <div className="absolute inset-0 bg-amber-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -300,14 +300,14 @@ function TrainingPrograms() {
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                      <h3 className="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
                         {program.title}
                       </h3>
                       <div className="flex gap-3 mt-1">
-                        <span className="text-xs text-amber-400/80 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                        <span className="text-xs text-amber-600 dark:text-amber-400/80 bg-amber-500/10 px-2 py-0.5 rounded-full">
                           {program.duration}
                         </span>
-                        <span className="text-xs text-gray-500 bg-gray-800/80 px-2 py-0.5 rounded-full">
+                        <span className="text-xs text-neutral-500 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-700/80 px-2 py-0.5 rounded-full">
                           {program.level}
                         </span>
                       </div>
@@ -315,7 +315,7 @@ function TrainingPrograms() {
                   </div>
 
                   {/* Description */}
-                  <p className="relative text-gray-400 text-sm leading-relaxed">
+                  <p className="relative text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">
                     {program.description}
                   </p>
 
@@ -323,8 +323,8 @@ function TrainingPrograms() {
                   <div className="relative space-y-2 flex-1">
                     {program.topics.map((topic) => (
                       <div key={topic} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-amber-400/70 flex-shrink-0" />
-                        <span className="text-gray-300 text-xs">{topic}</span>
+                        <CheckCircle2 className="w-4 h-4 text-amber-500/70 dark:text-amber-400/70 flex-shrink-0" />
+                        <span className="text-neutral-600 dark:text-neutral-300 text-xs">{topic}</span>
                       </div>
                     ))}
                   </div>
@@ -332,7 +332,7 @@ function TrainingPrograms() {
                   {/* CTA */}
                   <Link
                     href="/contact"
-                    className="relative inline-flex items-center gap-2 text-amber-400 text-sm font-medium mt-2 group/link"
+                    className="relative inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 text-sm font-medium mt-2 group/link"
                   >
                     S&apos;inscrire
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1.5" />
@@ -364,7 +364,7 @@ function RegistrationCTA() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
+    <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08),transparent_50%)]" />
 
       <motion.div
@@ -373,7 +373,7 @@ function RegistrationCTA() {
         transition={{ duration: 0.7 }}
         className="relative max-w-5xl mx-auto px-6"
       >
-        <div className="relative p-10 md:p-16 rounded-3xl bg-gray-900/60 border border-gray-800 backdrop-blur-sm overflow-hidden">
+        <div className="relative p-10 md:p-16 rounded-3xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 backdrop-blur-sm overflow-hidden">
           {/* Animated background glow */}
           <motion.div
             className="absolute -top-1/2 -right-1/4 w-96 h-96 rounded-full bg-amber-500/10 blur-[100px]"
@@ -387,29 +387,29 @@ function RegistrationCTA() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-400 mb-6"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-500 dark:text-amber-400 mb-6"
               >
                 <GraduationCap className="w-8 h-8" />
               </motion.div>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Prêt à vous{' '}
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+                Pret a vous{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
                   former ?
                 </span>
               </h2>
 
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Inscrivez-vous dès maintenant à l&apos;une de nos formations et développez les compétences
-                qui feront la différence dans votre carrière. Sessions individuelles ou en groupe disponibles.
+              <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">
+                Inscrivez-vous des maintenant a l&apos;une de nos formations et developpez les competences
+                qui feront la difference dans votre carriere. Sessions individuelles ou en groupe disponibles.
               </p>
 
               <div className="space-y-3">
                 {[
                   'Formation sur site ou dans nos locaux',
-                  'Groupes de 5 à 15 participants',
-                  'Supports pédagogiques inclus',
-                  'Attestation de formation délivrée',
+                  'Groupes de 5 a 15 participants',
+                  'Supports pedagogiques inclus',
+                  'Attestation de formation delivree',
                 ].map((item, i) => (
                   <motion.div
                     key={item}
@@ -418,8 +418,8 @@ function RegistrationCTA() {
                     transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm">{item}</span>
+                    <CheckCircle2 className="w-5 h-5 text-amber-500 dark:text-amber-400 flex-shrink-0" />
+                    <span className="text-neutral-600 dark:text-neutral-300 text-sm">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -428,7 +428,7 @@ function RegistrationCTA() {
             <div className="flex flex-col gap-4 items-start md:items-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white dark:text-neutral-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
               >
                 S&apos;inscrire maintenant
                 <ArrowRight className="w-5 h-5" />
@@ -436,12 +436,12 @@ function RegistrationCTA() {
 
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-amber-500/30 text-amber-400 font-semibold rounded-lg hover:bg-amber-500/5 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-semibold rounded-lg hover:bg-amber-500/5 transition-all duration-300"
               >
                 Demander un programme sur mesure
               </Link>
 
-              <p className="text-gray-500 text-sm text-center mt-2">
+              <p className="text-neutral-500 dark:text-neutral-500 text-sm text-center mt-2">
                 Contactez-nous pour des tarifs de groupe
               </p>
             </div>

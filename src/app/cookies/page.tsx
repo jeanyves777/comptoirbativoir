@@ -41,7 +41,7 @@ export default function CookiesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <main className="min-h-screen bg-white dark:bg-neutral-950">
         {/* Hero Banner */}
         <div className="relative pt-24 pb-16 overflow-hidden">
           <div
@@ -63,10 +63,10 @@ export default function CookiesPage() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6">
                 <Cookie className="w-8 h-8 text-amber-500" />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
                 Politique relative aux Cookies
               </h1>
-              <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-lg text-neutral-500 dark:text-neutral-400">
                 Dernière mise à jour : {lastUpdated}
               </p>
             </motion.div>
@@ -79,10 +79,9 @@ export default function CookiesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-16 p-6 rounded-xl border"
-            style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)' }}
+            className="mb-16 p-6 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700"
           >
-            <h2 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-lg font-semibold mb-4 text-neutral-900 dark:text-white">
               Table des matières
             </h2>
             <ul className="space-y-2">
@@ -90,8 +89,7 @@ export default function CookiesPage() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 hover:text-amber-500"
-                    style={{ color: 'var(--text-secondary)' }}
+                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-amber-500"
                   >
                     <ChevronRight size={14} className="text-amber-500/60" />
                     <span className="text-amber-500/60 font-mono text-xs">Article {index + 1}</span>
@@ -103,9 +101,9 @@ export default function CookiesPage() {
           </motion.nav>
 
           {/* Content */}
-          <div className="legal-content" style={{ color: 'var(--text-secondary)' }}>
+          <div className="legal-content text-neutral-600 dark:text-neutral-300">
             <AnimatedSection id="definition">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 1 —</span> Qu&apos;est-ce qu&apos;un cookie ?
               </h2>
               <p className="leading-relaxed mb-4">
@@ -121,7 +119,7 @@ export default function CookiesPage() {
             </AnimatedSection>
 
             <AnimatedSection id="types">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 2 —</span> Types de Cookies Utilisés
               </h2>
               <p className="leading-relaxed mb-4">
@@ -129,8 +127,8 @@ export default function CookiesPage() {
               </p>
 
               <div className="space-y-4">
-                <div className="p-5 rounded-xl border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
-                  <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+                <div className="p-5 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
+                  <h3 className="font-semibold mb-2 text-neutral-900 dark:text-white">
                     Cookies strictement nécessaires
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -140,8 +138,8 @@ export default function CookiesPage() {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-xl border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
-                  <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+                <div className="p-5 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
+                  <h3 className="font-semibold mb-2 text-neutral-900 dark:text-white">
                     Cookies de performance et d&apos;analyse
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -151,8 +149,8 @@ export default function CookiesPage() {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-xl border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
-                  <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+                <div className="p-5 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
+                  <h3 className="font-semibold mb-2 text-neutral-900 dark:text-white">
                     Cookies fonctionnels
                   </h3>
                   <p className="text-sm leading-relaxed">
@@ -165,7 +163,7 @@ export default function CookiesPage() {
             </AnimatedSection>
 
             <AnimatedSection id="finalites">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 3 —</span> Finalités des Cookies
               </h2>
               <p className="leading-relaxed mb-4">
@@ -182,7 +180,7 @@ export default function CookiesPage() {
             </AnimatedSection>
 
             <AnimatedSection id="consentement">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 4 —</span> Consentement
               </h2>
               <p className="leading-relaxed mb-4">
@@ -211,7 +209,7 @@ export default function CookiesPage() {
             </AnimatedSection>
 
             <AnimatedSection id="gestion">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 5 —</span> Gestion des Cookies
               </h2>
               <p className="leading-relaxed mb-4">
@@ -219,22 +217,22 @@ export default function CookiesPage() {
                 procéder sur les principaux navigateurs :
               </p>
               <div className="space-y-3 mb-4">
-                <div className="p-4 rounded-lg border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+                <div className="p-4 rounded-lg border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
                   <p className="text-sm">
                     <strong>Google Chrome :</strong> Menu &gt; Paramètres &gt; Confidentialité et sécurité &gt; Cookies et autres données des sites
                   </p>
                 </div>
-                <div className="p-4 rounded-lg border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+                <div className="p-4 rounded-lg border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
                   <p className="text-sm">
                     <strong>Mozilla Firefox :</strong> Menu &gt; Options &gt; Vie privée et sécurité &gt; Cookies et données de sites
                   </p>
                 </div>
-                <div className="p-4 rounded-lg border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+                <div className="p-4 rounded-lg border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
                   <p className="text-sm">
                     <strong>Safari :</strong> Préférences &gt; Confidentialité &gt; Cookies et données de sites web
                   </p>
                 </div>
-                <div className="p-4 rounded-lg border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+                <div className="p-4 rounded-lg border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
                   <p className="text-sm">
                     <strong>Microsoft Edge :</strong> Paramètres &gt; Cookies et autorisations de site &gt; Gérer et supprimer les cookies
                   </p>
@@ -248,7 +246,7 @@ export default function CookiesPage() {
             </AnimatedSection>
 
             <AnimatedSection id="duree">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 6 —</span> Durée de Conservation
               </h2>
               <p className="leading-relaxed mb-4">
@@ -257,21 +255,21 @@ export default function CookiesPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b-2" style={{ borderColor: 'var(--border-color)' }}>
-                      <th className="text-left py-3 pr-4 font-semibold" style={{ color: 'var(--text-primary)' }}>Type de cookie</th>
-                      <th className="text-left py-3 pr-4 font-semibold" style={{ color: 'var(--text-primary)' }}>Durée</th>
+                    <tr className="border-b-2 border-neutral-200 dark:border-neutral-700">
+                      <th className="text-left py-3 pr-4 font-semibold text-neutral-900 dark:text-white">Type de cookie</th>
+                      <th className="text-left py-3 pr-4 font-semibold text-neutral-900 dark:text-white">Durée</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b" style={{ borderColor: 'var(--border-color)' }}>
+                    <tr className="border-b border-neutral-200 dark:border-neutral-700">
                       <td className="py-3 pr-4">Cookies de session</td>
                       <td className="py-3 pr-4">Supprimés à la fermeture du navigateur</td>
                     </tr>
-                    <tr className="border-b" style={{ borderColor: 'var(--border-color)' }}>
+                    <tr className="border-b border-neutral-200 dark:border-neutral-700">
                       <td className="py-3 pr-4">Cookies de préférences (thème)</td>
                       <td className="py-3 pr-4">12 mois maximum</td>
                     </tr>
-                    <tr className="border-b" style={{ borderColor: 'var(--border-color)' }}>
+                    <tr className="border-b border-neutral-200 dark:border-neutral-700">
                       <td className="py-3 pr-4">Cookies d&apos;analyse</td>
                       <td className="py-3 pr-4">13 mois maximum</td>
                     </tr>
@@ -288,31 +286,31 @@ export default function CookiesPage() {
             </AnimatedSection>
 
             <AnimatedSection id="contact">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
                 <span className="text-amber-500 mr-2">Article 7 —</span> Contact
               </h2>
               <p className="leading-relaxed mb-4">
                 Pour toute question relative à notre utilisation des cookies ou pour exercer vos droits relatifs
                 à vos données personnelles, vous pouvez nous contacter :
               </p>
-              <div className="p-6 rounded-xl border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
+              <div className="p-6 rounded-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700">
                 <p className="mb-2"><strong>COMPTOIR DES BATISSEURS IVOIRIENS</strong></p>
                 <p className="mb-1">11 BP 112 Abidjan 11, Angré non loin de la cité GESTOCI</p>
                 <p className="mb-1">Abidjan, Côte d&apos;Ivoire</p>
                 <p className="mb-1">
                   Téléphone :{' '}
-                  <a href="tel:+2252722266533" className="text-amber-500 hover:text-amber-400">+225 27 22 26 65 33</a>
+                  <a href="tel:+2252722266533" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 27 22 26 65 33</a>
                 </p>
                 <p>
                   E-mail :{' '}
-                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-500 hover:text-amber-400">
+                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
                     comptoirbatisseurivoiriens@gmail.com
                   </a>
                 </p>
               </div>
               <p className="leading-relaxed mt-4">
                 Pour plus d&apos;informations sur la protection de vos données personnelles, veuillez consulter notre{' '}
-                <Link href="/privacy" className="text-amber-500 hover:text-amber-400 underline underline-offset-2">
+                <Link href="/privacy" className="text-amber-600 dark:text-amber-400 hover:text-amber-500 underline underline-offset-2">
                   Politique de Confidentialité
                 </Link>.
               </p>

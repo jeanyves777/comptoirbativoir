@@ -212,7 +212,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
         {/* Background grid pattern */}
         <div
           className="absolute inset-0 opacity-5"
@@ -276,9 +276,8 @@ export default function NotFound() {
               }
             `}</style>
             <h1
-              className="glitch-text text-[10rem] sm:text-[14rem] md:text-[18rem] font-black leading-none select-none"
+              className="glitch-text text-[10rem] sm:text-[14rem] md:text-[18rem] font-black leading-none select-none text-neutral-900 dark:text-white"
               style={{
-                color: 'var(--text-primary)',
                 WebkitTextStroke: '2px rgba(245, 158, 11, 0.3)',
               }}
             >
@@ -302,16 +301,10 @@ export default function NotFound() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4"
-              style={{ color: 'var(--text-primary)' }}
-            >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-neutral-900 dark:text-white">
               Page introuvable
             </h2>
-            <p
-              className="text-lg max-w-md mx-auto mb-10"
-              style={{ color: 'var(--text-secondary)' }}
-            >
+            <p className="text-lg max-w-md mx-auto mb-10 text-neutral-500 dark:text-neutral-400">
               La page que vous recherchez n&apos;existe pas ou a été déplacée.
             </p>
           </motion.div>
@@ -335,11 +328,7 @@ export default function NotFound() {
             </Link>
             <button
               onClick={() => window.history.back()}
-              className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold rounded-lg border transition-all duration-300 hover:scale-105 active:scale-95"
-              style={{
-                color: 'var(--text-primary)',
-                borderColor: 'var(--border-color)',
-              }}
+              className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold rounded-lg border transition-all duration-300 hover:scale-105 active:scale-95 text-neutral-900 dark:text-white border-neutral-200 dark:border-neutral-700"
             >
               <ArrowLeft size={18} />
               Page précédente
