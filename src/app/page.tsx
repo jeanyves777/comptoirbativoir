@@ -7,6 +7,7 @@ import Partners from '@/components/Partners'
 import About from '@/components/About'
 import ContactSection from '@/components/ContactSection'
 import Announcements from '@/components/Announcements'
+import GoogleReviews from '@/components/GoogleReviews'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <About />
         <Services />
         <Partners />
+        <GoogleReviews />
         <ContactSection />
       </main>
       <Footer />

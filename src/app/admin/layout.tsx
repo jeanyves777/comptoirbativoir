@@ -9,6 +9,7 @@ import {
   Megaphone,
   Image,
   FileText,
+  BookOpen,
   ExternalLink,
   LogOut,
   Menu,
@@ -20,6 +21,7 @@ import LoginPage from './login/page';
 const navItems = [
   { href: '/admin', label: 'Tableau de bord', icon: LayoutDashboard },
   { href: '/admin/announcements', label: 'Annonces', icon: Megaphone },
+  { href: '/admin/blog', label: 'Blog', icon: BookOpen },
   { href: '/admin/media', label: 'Medias', icon: Image },
   { href: '/admin/content', label: 'Contenu', icon: FileText },
 ];

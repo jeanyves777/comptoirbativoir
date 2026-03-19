@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks } from '@/lib/data'
+import ThemeToggle from './ThemeToggle'
+import Logo from '@/components/Logo'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,23 +36,23 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-gray-950/90 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-amber-500/10'
-          : 'bg-gray-950/50 backdrop-blur-md'
+          ? 'backdrop-blur-xl shadow-lg shadow-black/20 border-b border-amber-500/10'
+          : 'backdrop-blur-md'
       }`}
+      style={{
+        backgroundColor: isScrolled ? 'var(--glass-bg)' : 'rgba(0,0,0,0)',
+      }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="relative group">
-            <motion.span
-              className="text-2xl md:text-3xl font-black tracking-wider text-amber-500 transition-all duration-300 group-hover:text-amber-400"
+            <motion.div
               whileHover={{ scale: 1.05 }}
-              style={{
-                textShadow: '0 0 20px rgba(245, 158, 11, 0.3)',
-              }}
+              className="transition-all duration-300"
             >
-              CBI
-            </motion.span>
+              <Logo size="sm" variant="light" showText={false} />
+            </motion.div>
             <span
               className="absolute inset-0 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{
@@ -73,8 +75,9 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA + Theme Toggle */}
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle />
             <Link
               href="/contact"
               className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-950 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 hover:scale-105 active:scale-95"
@@ -92,36 +95,39 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative p-2 text-gray-300 hover:text-amber-400 transition-colors"
-            aria-label="Toggle menu"
-          >
-            <AnimatePresence mode="wait">
-              {isMobileMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X size={24} />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={24} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
+          {/* Mobile: Theme Toggle + Menu Button */}
+          <div className="flex md:hidden items-center gap-1">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="relative p-2 text-gray-300 hover:text-amber-400 transition-colors"
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {isMobileMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X size={24} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu size={24} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -145,7 +151,8 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-16 right-0 bottom-0 w-72 bg-gray-950/95 backdrop-blur-xl border-l border-amber-500/10 md:hidden overflow-y-auto"
+              className="fixed top-16 right-0 bottom-0 w-72 backdrop-blur-xl border-l border-amber-500/10 md:hidden overflow-y-auto"
+              style={{ backgroundColor: 'var(--glass-bg)' }}
             >
               <div className="flex flex-col p-6 gap-2">
                 {navLinks.map((link, i) => (

@@ -12,34 +12,107 @@
   --font-body: 'Inter', sans-serif;
 }
 
+/* ===== CSS Custom Properties for theming ===== */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(226, 232, 240, 0.5);
+  --scrollbar-track: #e2e8f0;
+  --scrollbar-thumb: #f59e0b;
+  --selection-bg: #f59e0b;
+  --selection-text: #0f172a;
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --bg-elevated: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: #334155;
+  --glass-bg: rgba(2, 6, 23, 0.9);
+  --glass-border: rgba(245, 158, 11, 0.1);
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: #f59e0b;
+  --selection-bg: #f59e0b;
+  --selection-text: #0f172a;
+}
+
+/* ===== Base styles ===== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
+/* ===== Scrollbar ===== */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f59e0b;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::selection {
-  background: #f59e0b;
-  color: #0f172a;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
+
+/* ===== Light mode overrides for Tailwind utility classes ===== */
+
+/* Background overrides */
+html:not(.dark) .bg-gray-950 { background-color: #ffffff; }
+html:not(.dark) .bg-gray-900 { background-color: #f8fafc; }
+html:not(.dark) .bg-gray-800 { background-color: #f1f5f9; }
+html:not(.dark) .bg-gray-950\/90 { background-color: rgba(255, 255, 255, 0.92); }
+html:not(.dark) .bg-gray-950\/95 { background-color: rgba(255, 255, 255, 0.97); }
+html:not(.dark) .bg-gray-950\/50 { background-color: rgba(255, 255, 255, 0.6); }
+
+/* Text overrides */
+html:not(.dark) .text-white { color: #0f172a; }
+html:not(.dark) .text-gray-100 { color: #1e293b; }
+html:not(.dark) .text-gray-200 { color: #334155; }
+html:not(.dark) .text-gray-300 { color: #475569; }
+html:not(.dark) .text-gray-400 { color: #64748b; }
+html:not(.dark) .text-gray-500 { color: #64748b; }
+
+/* Border overrides */
+html:not(.dark) .border-gray-800 { border-color: #e2e8f0; }
+html:not(.dark) .border-gray-700 { border-color: #e2e8f0; }
+
+/* Hover text overrides */
+html:not(.dark) .hover\:text-white:hover { color: #0f172a; }
+
+/* Divide overrides */
+html:not(.dark) .divide-gray-800 > :not(:last-child) { border-color: #e2e8f0; }
+
+/* Shadow adjustments for light mode */
+html:not(.dark) .shadow-black\/20 { --tw-shadow-color: rgba(0, 0, 0, 0.08); }
+html:not(.dark) .shadow-black\/50 { --tw-shadow-color: rgba(0, 0, 0, 0.1); }
+
+/* Backdrop for mobile menu in light mode */
+html:not(.dark) .bg-black\/60 { background-color: rgba(0, 0, 0, 0.3); }

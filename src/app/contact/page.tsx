@@ -2,11 +2,10 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { ChevronDown, MapPin } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactSection from '@/components/ContactSection'
-import { companyInfo } from '@/lib/data'
 
 /* ------------------------------------------------------------------ */
 /*  Page Banner                                                         */
@@ -65,62 +64,6 @@ function PageBanner() {
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" />
-    </section>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/*  Larger Map Section                                                  */
-/* ------------------------------------------------------------------ */
-function MapSection() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
-  return (
-    <section ref={ref} className="relative py-24 bg-gray-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(245,158,11,0.05),transparent_60%)]" />
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
-            <MapPin className="w-3.5 h-3.5" />
-            Notre Localisation
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-            Où nous{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
-              trouver
-            </span>
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            {companyInfo.address}
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="rounded-2xl overflow-hidden border border-gray-800 h-[450px] md:h-[500px]"
-        >
-          <iframe
-            title="Localisation CBI"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5!2d-3.9639916!3d5.4016402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sfr!2sci!4v1"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
-          />
-        </motion.div>
-      </div>
     </section>
   )
 }
@@ -262,7 +205,6 @@ export default function ContactPage() {
       <main>
         <PageBanner />
         <ContactSection />
-        <MapSection />
         <FAQSection />
       </main>
       <Footer />

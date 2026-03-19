@@ -295,25 +295,6 @@ export default function ContactSection() {
               delay={0.35}
             />
 
-            {/* Google Maps embed placeholder */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="rounded-xl overflow-hidden border border-gray-800 h-52"
-            >
-              <iframe
-                title="Localisation CBI"
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5!2d-3.9639916!3d5.4016402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sfr!2sci!4v1`}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-              />
-            </motion.div>
           </div>
 
           {/* ---- Right: Contact form ---- */}

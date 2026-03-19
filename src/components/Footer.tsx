@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { companyInfo, navLinks } from '@/lib/data'
+import Logo from '@/components/Logo'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -57,12 +58,7 @@ export default function Footer() {
           {/* Company Info */}
           <motion.div variants={fadeInUp} custom={0} className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span
-                className="text-2xl font-black tracking-wider text-amber-500"
-                style={{ textShadow: '0 0 20px rgba(245, 158, 11, 0.3)' }}
-              >
-                CBI
-              </span>
+              <Logo size="md" variant="light" showText={true} />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {companyInfo.description}
@@ -97,6 +93,34 @@ export default function Footer() {
                     href={link.href}
                     className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group"
                   >
+                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/blog" className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
+                  <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Legal Links */}
+          <motion.div variants={fadeInUp} custom={1.5}>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+              Informations Légales
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { href: '/legal', label: 'Mentions Légales' },
+                { href: '/privacy', label: 'Politique de Confidentialité' },
+                { href: '/terms', label: 'Conditions Générales' },
+                { href: '/cookies', label: 'Politique des Cookies' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
                     <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
                     {link.label}
                   </Link>

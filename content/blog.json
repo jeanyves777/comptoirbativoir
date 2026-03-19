@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "title": "L'importance de la maintenance préventive des groupes électrogènes",
+    "slug": "importance-maintenance-preventive-groupes-electrogenes",
+    "excerpt": "Découvrez pourquoi la maintenance régulière de vos groupes électrogènes est essentielle pour garantir leur fiabilité et prolonger leur durée de vie.",
+    "content": "La maintenance préventive des groupes électrogènes est un élément crucial pour toute entreprise qui dépend de ces équipements pour assurer la continuité de son activité...\n\nUne maintenance régulière permet de:\n- Prévenir les pannes inattendues\n- Prolonger la durée de vie de l'équipement\n- Optimiser la consommation de carburant\n- Assurer la conformité aux normes de sécurité\n- Réduire les coûts de réparation à long terme\n\nChez CBI, nous proposons des contrats de maintenance adaptés à vos besoins, avec des interventions planifiées et un suivi personnalisé de chaque équipement.",
+    "image": "/images/services/groupe-electrogene.jpg",
+    "author": "Équipe CBI",
+    "category": "Maintenance",
+    "tags": ["groupe électrogène", "maintenance", "énergie"],
+    "published": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Guide complet de la climatisation industrielle en Côte d'Ivoire",
+    "slug": "guide-climatisation-industrielle-cote-ivoire",
+    "excerpt": "Tout ce que vous devez savoir sur l'installation et l'entretien des systèmes de climatisation dans un environnement tropical.",
+    "content": "Dans le climat tropical de la Côte d'Ivoire, disposer d'un système de climatisation performant est indispensable pour le confort et la productivité...\n\nLes points clés à considérer:\n- Le dimensionnement adapté à vos locaux\n- Le choix du type de système (split, VRV, central)\n- L'entretien régulier des filtres et condenseurs\n- L'optimisation énergétique\n- Les normes environnementales en vigueur\n\nNotre équipe d'experts vous accompagne dans le choix, l'installation et la maintenance de votre système de climatisation.",
+    "image": "/images/services/climatisation.jpg",
+    "author": "Équipe CBI",
+    "category": "Climatisation",
+    "tags": ["climatisation", "froid", "installation"],
+    "published": true,
+    "createdAt": "2024-02-20T10:00:00Z",
+    "updatedAt": "2024-02-20T10:00:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Sécurité électrique : les normes à respecter pour vos installations",
+    "slug": "securite-electrique-normes-installations",
+    "excerpt": "Les normes de sécurité électrique sont essentielles pour protéger vos employés et vos équipements. Voici ce que vous devez savoir.",
+    "content": "La sécurité électrique est une priorité absolue pour toute installation industrielle ou résidentielle...\n\nNormes principales:\n- NF C 15-100 pour les installations basse tension\n- Normes CEDEAO pour l'Afrique de l'Ouest\n- Réglementations locales ivoiriennes\n\nLes vérifications essentielles:\n- État des tableaux électriques\n- Mise à la terre\n- Protection différentielle\n- Câblage et connexions\n- Étiquetage des circuits\n\nCBI réalise des audits complets de vos installations et vous accompagne dans la mise en conformité.",
+    "image": "/images/services/electricite.jpg",
+    "author": "Équipe CBI",
+    "category": "Sécurité",
+    "tags": ["sécurité", "normes", "électricité"],
+    "published": true,
+    "createdAt": "2024-03-10T10:00:00Z",
+    "updatedAt": "2024-03-10T10:00:00Z"
+  }
+]

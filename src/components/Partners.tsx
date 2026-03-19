@@ -6,13 +6,15 @@ import { Handshake } from "lucide-react";
 import { partners } from "@/lib/data";
 
 /* ------------------------------------------------------------------ */
-/*  Single partner card                                                */
+/*  Single partner card with real logo                                 */
 /* ------------------------------------------------------------------ */
 function PartnerCard({
   name,
+  logo,
   index,
 }: {
   name: string;
+  logo: string;
   index: number;
 }) {
   return (
@@ -34,10 +36,13 @@ function PartnerCard({
         {/* Hover glow */}
         <div className="absolute inset-0 bg-amber-500/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Logo placeholder – initial letter in a circle */}
-        <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/10 ring-1 ring-amber-500/20 text-amber-500 font-bold text-xl">
-          {name.charAt(0)}
-          <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Logo image */}
+        <div className="relative flex items-center justify-center w-14 h-14 rounded-lg bg-white/90 p-1.5 overflow-hidden">
+          <img
+            src={logo}
+            alt={name}
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+          />
         </div>
 
         {/* Partner name */}
@@ -62,7 +67,6 @@ function PartnerCard({
 /*  Infinite marquee row                                               */
 /* ------------------------------------------------------------------ */
 function MarqueeRow({ direction = 1 }: { direction?: 1 | -1 }) {
-  // Duplicate partners multiple times so the strip is wide enough to loop
   const repeated = [...partners, ...partners, ...partners, ...partners];
 
   return (
@@ -83,7 +87,12 @@ function MarqueeRow({ direction = 1 }: { direction?: 1 | -1 }) {
         }}
       >
         {repeated.map((partner, i) => (
-          <PartnerCard key={`${partner.name}-${i}`} name={partner.name} index={0} />
+          <PartnerCard
+            key={`${partner.name}-${i}`}
+            name={partner.name}
+            logo={partner.logo}
+            index={0}
+          />
         ))}
       </motion.div>
     </div>
@@ -166,13 +175,16 @@ export default function Partners() {
               <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/25 via-amber-500/5 to-amber-500/20 opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
               {/* Card */}
-              <div className="relative w-64 h-36 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-white/[0.06] flex flex-col items-center justify-center gap-3 overflow-hidden transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1">
+              <div className="relative w-64 h-40 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-white/[0.06] flex flex-col items-center justify-center gap-3 overflow-hidden transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1">
                 <div className="absolute inset-0 bg-amber-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Logo placeholder circle */}
-                <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-amber-500/10 ring-1 ring-amber-500/20 text-amber-500 font-bold text-2xl">
-                  {partner.name.charAt(0)}
-                  <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Logo with white background container */}
+                <div className="relative flex items-center justify-center w-16 h-16 rounded-xl bg-white p-2 shadow-md overflow-hidden">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-115"
+                  />
                 </div>
 
                 <span className="text-gray-300 text-sm font-semibold text-center px-4 leading-tight group-hover:text-amber-400 transition-colors duration-300">
