@@ -150,7 +150,7 @@ function PageBanner() {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            'linear-gradient(#f59e0b 1px, transparent 1px), linear-gradient(90deg, #f59e0b 1px, transparent 1px)',
+            'linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -160,9 +160,9 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
           Developpez vos competences
         </motion.span>
 
@@ -172,7 +172,7 @@ function PageBanner() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             Formation
           </span>{' '}
           Professionnelle
@@ -218,17 +218,17 @@ function FeaturesGrid() {
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
+                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-orange-500/20 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
-                <div className="relative h-full p-6 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 group-hover:border-amber-500/30 transition-colors duration-300 text-center">
+                <div className="relative h-full p-6 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 group-hover:border-orange-500/30 transition-colors duration-300 text-center">
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 mb-4"
+                    className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-orange-500/10 text-orange-500 dark:text-orange-400 mb-4"
                   >
                     <Icon className="w-7 h-7" />
                   </motion.div>
-                  <h3 className="text-neutral-900 dark:text-white font-bold mb-2 group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-neutral-900 dark:text-white font-bold mb-2 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{feature.description}</p>
@@ -252,7 +252,7 @@ function TrainingPrograms() {
   return (
     <section ref={ref} className="relative py-24 bg-white dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.06),transparent_60%)]" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
@@ -261,12 +261,12 @@ function TrainingPrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Nos Programmes
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Programmes de{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
               Formation
             </span>
           </h2>
@@ -288,23 +288,23 @@ function TrainingPrograms() {
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
+                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-orange-500/20 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
-                <div className="relative h-full rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 p-7 flex flex-col gap-4 overflow-hidden group-hover:border-amber-500/30 transition-colors duration-300">
+                <div className="relative h-full rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 p-7 flex flex-col gap-4 overflow-hidden group-hover:border-orange-500/30 transition-colors duration-300">
                   {/* Hover glow */}
-                  <div className="absolute inset-0 bg-amber-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-orange-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Header */}
                   <div className="relative flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 ring-1 ring-amber-500/20 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 ring-1 ring-orange-500/20 flex items-center justify-center">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
+                      <h3 className="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
                         {program.title}
                       </h3>
                       <div className="flex gap-3 mt-1">
-                        <span className="text-xs text-amber-600 dark:text-amber-400/80 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                        <span className="text-xs text-orange-600 dark:text-orange-400/80 bg-orange-500/10 px-2 py-0.5 rounded-full">
                           {program.duration}
                         </span>
                         <span className="text-xs text-neutral-500 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-700/80 px-2 py-0.5 rounded-full">
@@ -323,7 +323,7 @@ function TrainingPrograms() {
                   <div className="relative space-y-2 flex-1">
                     {program.topics.map((topic) => (
                       <div key={topic} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-amber-500/70 dark:text-amber-400/70 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-orange-500/70 dark:text-orange-400/70 flex-shrink-0" />
                         <span className="text-neutral-600 dark:text-neutral-300 text-xs">{topic}</span>
                       </div>
                     ))}
@@ -332,7 +332,7 @@ function TrainingPrograms() {
                   {/* CTA */}
                   <Link
                     href="/contact"
-                    className="relative inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 text-sm font-medium mt-2 group/link"
+                    className="relative inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 text-sm font-medium mt-2 group/link"
                   >
                     S&apos;inscrire
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1.5" />
@@ -340,7 +340,7 @@ function TrainingPrograms() {
 
                   {/* Corner accent */}
                   <svg
-                    className="absolute top-0 right-0 w-20 h-20 text-amber-500/[0.05]"
+                    className="absolute top-0 right-0 w-20 h-20 text-orange-500/[0.05]"
                     viewBox="0 0 80 80"
                     fill="none"
                   >
@@ -376,7 +376,7 @@ function RegistrationCTA() {
         <div className="relative p-10 md:p-16 rounded-3xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 backdrop-blur-sm overflow-hidden">
           {/* Animated background glow */}
           <motion.div
-            className="absolute -top-1/2 -right-1/4 w-96 h-96 rounded-full bg-amber-500/10 blur-[100px]"
+            className="absolute -top-1/2 -right-1/4 w-96 h-96 rounded-full bg-orange-500/10 blur-[100px]"
             animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' as const }}
           />
@@ -387,14 +387,14 @@ function RegistrationCTA() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-500 dark:text-amber-400 mb-6"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-500/10 text-orange-500 dark:text-orange-400 mb-6"
               >
                 <GraduationCap className="w-8 h-8" />
               </motion.div>
 
               <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
                 Pret a vous{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                   former ?
                 </span>
               </h2>
@@ -418,7 +418,7 @@ function RegistrationCTA() {
                     transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-amber-500 dark:text-amber-400 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-orange-500 dark:text-orange-400 flex-shrink-0" />
                     <span className="text-neutral-600 dark:text-neutral-300 text-sm">{item}</span>
                   </motion.div>
                 ))}
@@ -428,7 +428,7 @@ function RegistrationCTA() {
             <div className="flex flex-col gap-4 items-start md:items-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white dark:text-neutral-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white dark:text-neutral-950 font-bold rounded-lg hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
               >
                 S&apos;inscrire maintenant
                 <ArrowRight className="w-5 h-5" />
@@ -436,7 +436,7 @@ function RegistrationCTA() {
 
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-semibold rounded-lg hover:bg-amber-500/5 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-orange-500/30 text-orange-600 dark:text-orange-400 font-semibold rounded-lg hover:bg-orange-500/5 transition-all duration-300"
               >
                 Demander un programme sur mesure
               </Link>

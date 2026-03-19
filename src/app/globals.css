@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #f59e0b;
-  --color-primary-dark: #d97706;
-  --color-primary-light: #fbbf24;
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
+  --color-primary-light: #fb923c;
   --color-accent: #3b82f6;
   --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-warm {
-  background: linear-gradient(180deg, #fefce8 0%, #fffbeb 50%, #fefce8 100%);
+  background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 50%, #fff7ed 100%);
 }
 .dark .section-warm {
   background: linear-gradient(180deg, #1a1a1a 0%, #1c1917 50%, #1a1a1a 100%);
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 3px; }
 .dark ::-webkit-scrollbar-thumb { background: #404040; }
-::selection { background: #f59e0b; color: #171717; }
+::selection { background: #f97316; color: #171717; }
 
 /* Slide-in animation for hero */
 @keyframes kenburns {

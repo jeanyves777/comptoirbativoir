@@ -60,8 +60,8 @@ export default function CookiesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6">
-                <Cookie className="w-8 h-8 text-amber-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 mb-6">
+                <Cookie className="w-8 h-8 text-orange-500" />
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
                 Politique relative aux Cookies
@@ -89,10 +89,10 @@ export default function CookiesPage() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-amber-500"
+                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-orange-500"
                   >
-                    <ChevronRight size={14} className="text-amber-500/60" />
-                    <span className="text-amber-500/60 font-mono text-xs">Article {index + 1}</span>
+                    <ChevronRight size={14} className="text-orange-500/60" />
+                    <span className="text-orange-500/60 font-mono text-xs">Article {index + 1}</span>
                     {item.label}
                   </a>
                 </li>
@@ -104,7 +104,7 @@ export default function CookiesPage() {
           <div className="legal-content text-neutral-600 dark:text-neutral-300">
             <AnimatedSection id="definition">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 1 —</span> Qu&apos;est-ce qu&apos;un cookie ?
+                <span className="text-orange-500 mr-2">Article 1 —</span> Qu&apos;est-ce qu&apos;un cookie ?
               </h2>
               <p className="leading-relaxed mb-4">
                 Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, téléphone
@@ -120,7 +120,7 @@ export default function CookiesPage() {
 
             <AnimatedSection id="types">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 2 —</span> Types de Cookies Utilisés
+                <span className="text-orange-500 mr-2">Article 2 —</span> Types de Cookies Utilisés
               </h2>
               <p className="leading-relaxed mb-4">
                 Le site <strong>comptoirbativoir.com</strong> utilise les catégories de cookies suivantes :
@@ -164,7 +164,7 @@ export default function CookiesPage() {
 
             <AnimatedSection id="finalites">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 3 —</span> Finalités des Cookies
+                <span className="text-orange-500 mr-2">Article 3 —</span> Finalités des Cookies
               </h2>
               <p className="leading-relaxed mb-4">
                 Les cookies que nous utilisons ont pour finalités de :
@@ -181,7 +181,7 @@ export default function CookiesPage() {
 
             <AnimatedSection id="consentement">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 4 —</span> Consentement
+                <span className="text-orange-500 mr-2">Article 4 —</span> Consentement
               </h2>
               <p className="leading-relaxed mb-4">
                 Conformément à la réglementation ivoirienne, notamment la Loi n°2013-450 du 19 juin 2013 relative
@@ -210,7 +210,7 @@ export default function CookiesPage() {
 
             <AnimatedSection id="gestion">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 5 —</span> Gestion des Cookies
+                <span className="text-orange-500 mr-2">Article 5 —</span> Gestion des Cookies
               </h2>
               <p className="leading-relaxed mb-4">
                 Vous pouvez configurer votre navigateur pour accepter ou refuser les cookies. Voici comment
@@ -247,7 +247,7 @@ export default function CookiesPage() {
 
             <AnimatedSection id="duree">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 6 —</span> Durée de Conservation
+                <span className="text-orange-500 mr-2">Article 6 —</span> Durée de Conservation
               </h2>
               <p className="leading-relaxed mb-4">
                 La durée de conservation des cookies varie en fonction de leur type :
@@ -287,7 +287,7 @@ export default function CookiesPage() {
 
             <AnimatedSection id="contact">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 7 —</span> Contact
+                <span className="text-orange-500 mr-2">Article 7 —</span> Contact
               </h2>
               <p className="leading-relaxed mb-4">
                 Pour toute question relative à notre utilisation des cookies ou pour exercer vos droits relatifs
@@ -299,18 +299,18 @@ export default function CookiesPage() {
                 <p className="mb-1">Abidjan, Côte d&apos;Ivoire</p>
                 <p className="mb-1">
                   Téléphone :{' '}
-                  <a href="tel:+2252722266533" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 27 22 26 65 33</a>
+                  <a href="tel:+2252722266533" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">+225 27 22 26 65 33</a>
                 </p>
                 <p>
                   E-mail :{' '}
-                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                     comptoirbatisseurivoiriens@gmail.com
                   </a>
                 </p>
               </div>
               <p className="leading-relaxed mt-4">
                 Pour plus d&apos;informations sur la protection de vos données personnelles, veuillez consulter notre{' '}
-                <Link href="/privacy" className="text-amber-600 dark:text-amber-400 hover:text-amber-500 underline underline-offset-2">
+                <Link href="/privacy" className="text-orange-600 dark:text-orange-400 hover:text-orange-500 underline underline-offset-2">
                   Politique de Confidentialité
                 </Link>.
               </p>

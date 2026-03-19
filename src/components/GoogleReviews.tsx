@@ -41,7 +41,7 @@ function Star({ filled = true }: { filled?: boolean }) {
     <svg
       className={`w-4 h-4 ${
         filled
-          ? "text-amber-400"
+          ? "text-orange-400"
           : "text-neutral-300 dark:text-neutral-600"
       }`}
       viewBox="0 0 20 20"
@@ -135,7 +135,7 @@ function ReviewCard({
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-3">
           {/* Avatar */}
-          <div className="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-sm">
+          <div className="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-500/10 border border-orange-200 dark:border-orange-500/20 flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold text-sm">
             {review.name.charAt(0)}
           </div>
           <div>
@@ -187,7 +187,7 @@ export default function GoogleReviews() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-200 dark:border-orange-500/30 bg-orange-50 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4"
           >
             <GoogleLogo className="w-4 h-4" />
             Avis Clients

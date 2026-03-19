@@ -33,12 +33,12 @@ export default function Logo({ size = 'md', showText = true }: LogoProps) {
       >
         <defs>
           <linearGradient id={`${uid}-amber`} x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#fbbf24" />
-            <stop offset="100%" stopColor="#f59e0b" />
+            <stop offset="0%" stopColor="#fb923c" />
+            <stop offset="100%" stopColor="#f97316" />
           </linearGradient>
           <linearGradient id={`${uid}-bolt`} x1="60" y1="20" x2="60" y2="90" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#fde68a" />
-            <stop offset="100%" stopColor="#f59e0b" />
+            <stop offset="0%" stopColor="#fdba74" />
+            <stop offset="100%" stopColor="#f97316" />
           </linearGradient>
         </defs>
 
@@ -72,19 +72,19 @@ export default function Logo({ size = 'md', showText = true }: LogoProps) {
 
         {/* Circuit line decoration at the bottom */}
         <g opacity="0.5">
-          <line x1="18" y1="98" x2="38" y2="98" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="38" cy="98" r="2.5" fill="#f59e0b" />
-          <line x1="43" y1="98" x2="58" y2="98" stroke="#f59e0b" strokeWidth="1" strokeLinecap="round" strokeDasharray="3 3" />
-          <circle cx="62" cy="98" r="2" fill="#f59e0b" />
-          <line x1="66" y1="98" x2="78" y2="98" stroke="#f59e0b" strokeWidth="1" strokeLinecap="round" strokeDasharray="3 3" />
-          <circle cx="82" cy="98" r="2.5" fill="#f59e0b" />
-          <line x1="85" y1="98" x2="102" y2="98" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="18" y1="98" x2="38" y2="98" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="38" cy="98" r="2.5" fill="#f97316" />
+          <line x1="43" y1="98" x2="58" y2="98" stroke="#f97316" strokeWidth="1" strokeLinecap="round" strokeDasharray="3 3" />
+          <circle cx="62" cy="98" r="2" fill="#f97316" />
+          <line x1="66" y1="98" x2="78" y2="98" stroke="#f97316" strokeWidth="1" strokeLinecap="round" strokeDasharray="3 3" />
+          <circle cx="82" cy="98" r="2.5" fill="#f97316" />
+          <line x1="85" y1="98" x2="102" y2="98" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" />
         </g>
 
         {/* Small circuit node branch going down */}
         <g opacity="0.35">
-          <line x1="62" y1="98" x2="62" y2="106" stroke="#f59e0b" strokeWidth="1" strokeLinecap="round" />
-          <circle cx="62" cy="107" r="1.5" fill="#f59e0b" />
+          <line x1="62" y1="98" x2="62" y2="106" stroke="#f97316" strokeWidth="1" strokeLinecap="round" />
+          <circle cx="62" cy="107" r="1.5" fill="#f97316" />
         </g>
       </svg>
 

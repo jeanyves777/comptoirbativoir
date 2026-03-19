@@ -48,7 +48,7 @@ function CircuitSeparator({ flip = false }: { flip?: boolean }) {
     >
       <motion.path
         d="M 0 30 L 200 30 L 230 10 L 260 50 L 290 10 L 320 50 L 350 30 L 550 30"
-        stroke="#f59e0b"
+        stroke="#f97316"
         strokeWidth="1.5"
         strokeLinecap="round"
         fill="none"
@@ -59,13 +59,13 @@ function CircuitSeparator({ flip = false }: { flip?: boolean }) {
         transition={{ duration: 2, ease: 'easeInOut' as const }}
       />
       <motion.circle
-        cx="550" cy="30" r="4" fill="#f59e0b" opacity="0.5"
+        cx="550" cy="30" r="4" fill="#f97316" opacity="0.5"
         animate={{ r: [3, 5, 3], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 2, repeat: Infinity }}
       />
       <motion.path
         d="M 550 30 L 650 30 L 650 10 L 750 10 L 750 30 L 850 30"
-        stroke="#f59e0b"
+        stroke="#f97316"
         strokeWidth="1.5"
         strokeLinecap="round"
         fill="none"
@@ -77,7 +77,7 @@ function CircuitSeparator({ flip = false }: { flip?: boolean }) {
       />
       <motion.path
         d="M 850 30 L 900 30 L 930 50 L 960 10 L 990 50 L 1020 30 L 1200 30"
-        stroke="#f59e0b"
+        stroke="#f97316"
         strokeWidth="1.5"
         strokeLinecap="round"
         fill="none"
@@ -89,7 +89,7 @@ function CircuitSeparator({ flip = false }: { flip?: boolean }) {
       />
 
       {/* Energy pulse */}
-      <motion.circle cx="0" cy="0" r="3" fill="#f59e0b" opacity="0.8">
+      <motion.circle cx="0" cy="0" r="3" fill="#f97316" opacity="0.8">
         <animateMotion
           dur="4s"
           repeatCount="indefinite"
@@ -117,7 +117,7 @@ function PageBanner() {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            'linear-gradient(#f59e0b 1px, transparent 1px), linear-gradient(90deg, #f59e0b 1px, transparent 1px)',
+            'linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -127,9 +127,9 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
           Ce que nous faisons
         </motion.span>
 
@@ -140,7 +140,7 @@ function PageBanner() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           Nos{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             Services
           </span>
         </motion.h1>
@@ -198,17 +198,17 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' as const }}
-                className="w-32 h-32 rounded-3xl bg-amber-500/10 flex items-center justify-center"
+                className="w-32 h-32 rounded-3xl bg-orange-500/10 flex items-center justify-center"
               >
-                <Icon className="w-16 h-16 text-amber-500/60" />
+                <Icon className="w-16 h-16 text-orange-500/60" />
               </motion.div>
             </div>
 
             {/* Hover glow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Corner accent */}
-            <div className="absolute top-4 right-4 px-3 py-1 bg-amber-500/20 rounded-full text-amber-600 dark:text-amber-400 text-xs font-semibold backdrop-blur-sm">
+            <div className="absolute top-4 right-4 px-3 py-1 bg-orange-500/20 rounded-full text-orange-600 dark:text-orange-400 text-xs font-semibold backdrop-blur-sm">
               Service {String(index + 1).padStart(2, '0')}
             </div>
           </div>
@@ -225,7 +225,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500/10 text-amber-500 ring-1 ring-amber-500/20 mb-6"
+            className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-orange-500/10 text-orange-500 ring-1 ring-orange-500/20 mb-6"
           >
             <Icon className="w-7 h-7" />
           </motion.div>
@@ -243,7 +243,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
                 transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
                 className="flex items-center gap-3"
               >
-                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-orange-400 flex-shrink-0" />
                 <span className="text-neutral-500 dark:text-neutral-400 text-sm">{feature}</span>
               </motion.div>
             ))}
@@ -252,7 +252,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-semibold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-neutral-950 font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Demander un devis
               <ArrowRight className="w-4 h-4" />
@@ -260,7 +260,7 @@ function ServiceDetail({ service, index, reversed }: ServiceDetailProps) {
 
             <a
               href={`tel:${companyInfo.phones[0].replace(/\s/g, '')}`}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-semibold rounded-lg hover:bg-amber-500/5 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-orange-500/30 text-orange-600 dark:text-orange-400 font-semibold rounded-lg hover:bg-orange-500/5 transition-all duration-300"
             >
               <Phone className="w-4 h-4" />
               Nous appeler
@@ -291,7 +291,7 @@ function CTASection() {
       >
         <div className="p-12 rounded-3xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm backdrop-blur-sm relative overflow-hidden">
           {/* Animated border glow */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10 animate-pulse" />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-500/10 via-transparent to-orange-500/10 animate-pulse" />
 
           <h2 className="relative text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
             Un projet en tête ?
@@ -304,7 +304,7 @@ function CTASection() {
           <div className="relative flex flex-wrap justify-center gap-4">
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-neutral-950 font-bold rounded-lg hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
             >
               Demander un Devis
               <ArrowRight className="w-5 h-5" />
@@ -312,7 +312,7 @@ function CTASection() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-bold rounded-lg hover:bg-amber-500/5 transition-all duration-300 text-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-orange-500/30 text-orange-600 dark:text-orange-400 font-bold rounded-lg hover:bg-orange-500/5 transition-all duration-300 text-lg"
             >
               Nous contacter
             </Link>

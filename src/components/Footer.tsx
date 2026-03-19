@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 dark:bg-neutral-950">
       {/* Top amber gradient line */}
-      <div className="h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500" />
+      <div className="h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Top row: Company info + Contact info */}
@@ -68,7 +68,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex items-center justify-center w-10 h-10 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-amber-400 transition-all duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-orange-400 transition-all duration-300"
                 >
                   <social.icon size={18} />
                 </a>
@@ -83,15 +83,15 @@ export default function Footer() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <Phone size={16} className="text-amber-500" />
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center mt-0.5">
+                  <Phone size={16} className="text-orange-500" />
                 </div>
                 <div className="space-y-1">
                   {companyInfo.phones.map((phone) => (
                     <a
                       key={phone}
                       href={`tel:${phone.replace(/\s/g, '')}`}
-                      className="block text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                      className="block text-neutral-400 hover:text-orange-400 text-sm transition-colors duration-200"
                     >
                       {phone}
                     </a>
@@ -99,15 +99,15 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <Mail size={16} className="text-amber-500" />
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center mt-0.5">
+                  <Mail size={16} className="text-orange-500" />
                 </div>
                 <div className="space-y-1">
                   {companyInfo.emails.map((email) => (
                     <a
                       key={email}
                       href={`mailto:${email}`}
-                      className="block text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200 break-all"
+                      className="block text-neutral-400 hover:text-orange-400 text-sm transition-colors duration-200 break-all"
                     >
                       {email}
                     </a>
@@ -115,8 +115,8 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <MapPin size={16} className="text-amber-500" />
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center mt-0.5">
+                  <MapPin size={16} className="text-orange-500" />
                 </div>
                 <p className="text-neutral-400 text-sm leading-relaxed">
                   {companyInfo.address}
@@ -143,7 +143,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                    className="text-neutral-400 hover:text-orange-400 text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -152,7 +152,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                  className="text-neutral-400 hover:text-orange-400 text-sm transition-colors duration-200"
                 >
                   Blog
                 </Link>
@@ -170,7 +170,7 @@ export default function Footer() {
                 <li key={s}>
                   <Link
                     href="/services"
-                    className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                    className="text-neutral-400 hover:text-orange-400 text-sm transition-colors duration-200"
                   >
                     {s}
                   </Link>
@@ -189,7 +189,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                    className="text-neutral-400 hover:text-orange-400 text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -208,7 +208,7 @@ export default function Footer() {
             </p>
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-500 text-white font-semibold text-sm hover:bg-amber-600 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-all duration-300"
             >
               Obtenir un Devis
             </Link>

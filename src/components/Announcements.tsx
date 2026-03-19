@@ -82,7 +82,7 @@ export default function Announcements() {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-white overflow-hidden">
+    <div className="relative w-full bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 text-white overflow-hidden">
       {/* Animated background pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

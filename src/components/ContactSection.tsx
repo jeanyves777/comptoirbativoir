@@ -34,9 +34,9 @@ function InfoCard({ icon, title, lines, delay }: InfoCardProps) {
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.5, delay, ease: 'easeOut' }}
-      className="group flex items-start gap-4 p-5 rounded-xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-colors duration-300"
+      className="group flex items-start gap-4 p-5 rounded-xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-orange-500/30 dark:hover:border-orange-500/30 transition-colors duration-300"
     >
-      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-amber-50 text-amber-500 dark:bg-amber-500/10 dark:text-amber-400 flex items-center justify-center group-hover:bg-amber-100 dark:group-hover:bg-amber-500/20 transition-colors">
+      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-50 text-orange-500 dark:bg-orange-500/10 dark:text-orange-400 flex items-center justify-center group-hover:bg-orange-100 dark:group-hover:bg-orange-500/20 transition-colors">
         {icon}
       </div>
       <div>
@@ -83,14 +83,14 @@ function FloatingField({
   error,
 }: FloatingFieldProps) {
   const baseClass =
-    'peer w-full bg-white dark:bg-neutral-900 border rounded-lg px-4 pt-6 pb-2 pl-11 text-neutral-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-colors';
+    'peer w-full bg-white dark:bg-neutral-900 border rounded-lg px-4 pt-6 pb-2 pl-11 text-neutral-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-colors';
   const borderClass = error
     ? 'border-red-500 dark:border-red-400'
     : 'border-neutral-300 dark:border-neutral-600';
 
   return (
     <div className="relative">
-      <div className="absolute left-3.5 top-4 text-neutral-400 dark:text-neutral-500 peer-focus:text-amber-500 dark:peer-focus:text-amber-400 transition-colors z-10">
+      <div className="absolute left-3.5 top-4 text-neutral-400 dark:text-neutral-500 peer-focus:text-orange-500 dark:peer-focus:text-orange-400 transition-colors z-10">
         {icon}
       </div>
       {textarea ? (
@@ -116,7 +116,7 @@ function FloatingField({
       )}
       <label
         htmlFor={id}
-        className="absolute left-11 top-1.5 text-xs text-neutral-500 dark:text-neutral-400 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-amber-500 dark:peer-focus:text-amber-400 transition-all pointer-events-none"
+        className="absolute left-11 top-1.5 text-xs text-neutral-500 dark:text-neutral-400 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-orange-500 dark:peer-focus:text-orange-400 transition-all pointer-events-none"
       >
         {label}
       </label>
@@ -130,7 +130,7 @@ function FloatingField({
 /* ------------------------------------------------------------------ */
 /*  Main ContactSection Component                                      */
 /* ------------------------------------------------------------------ */
-export default function ContactSection() {
+export default function ContactSection({ hideHeader = false }: { hideHeader?: boolean }) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
@@ -185,26 +185,28 @@ export default function ContactSection() {
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-1.5 bg-amber-50 border border-amber-200 dark:bg-amber-500/10 dark:border-amber-500/20 rounded-full text-amber-600 dark:text-amber-400 text-sm font-medium mb-4">
-            Contactez-nous
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
-            Restons en{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-500">
-              Contact
+        {!hideHeader && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-1.5 bg-orange-50 border border-orange-200 dark:bg-orange-500/10 dark:border-orange-500/20 rounded-full text-orange-600 dark:text-orange-400 text-sm font-medium mb-4">
+              Contactez-nous
             </span>
-          </h2>
-          <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
-            N&apos;hésitez pas à nous contacter pour toute demande de devis ou
-            d&apos;information. Notre équipe est à votre disposition.
-          </p>
-        </motion.div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
+              Restons en{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">
+                Contact
+              </span>
+            </h2>
+            <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
+              N&apos;hésitez pas à nous contacter pour toute demande de devis ou
+              d&apos;information. Notre équipe est à votre disposition.
+            </p>
+          </motion.div>
+        )}
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* ---- Left: Info cards ---- */}
@@ -293,7 +295,7 @@ export default function ContactSection() {
                 disabled={loading}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-8 py-3.5 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
+                className="w-full sm:w-auto px-8 py-3.5 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
               >
                 <span className="flex items-center justify-center gap-2">
                   {loading ? (

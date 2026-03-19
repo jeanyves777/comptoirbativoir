@@ -58,8 +58,8 @@ export default function LegalPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6">
-                <Scale className="w-8 h-8 text-amber-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 mb-6">
+                <Scale className="w-8 h-8 text-orange-500" />
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
                 Mentions Légales
@@ -87,10 +87,10 @@ export default function LegalPage() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-amber-500"
+                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-orange-500"
                   >
-                    <ChevronRight size={14} className="text-amber-500/60" />
-                    <span className="text-amber-500/60 font-mono text-xs">Article {index + 1}</span>
+                    <ChevronRight size={14} className="text-orange-500/60" />
+                    <span className="text-orange-500/60 font-mono text-xs">Article {index + 1}</span>
                     {item.label}
                   </a>
                 </li>
@@ -102,7 +102,7 @@ export default function LegalPage() {
           <div className="legal-content text-neutral-600 dark:text-neutral-300">
             <AnimatedSection id="editeur">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 1 —</span> Éditeur du Site
+                <span className="text-orange-500 mr-2">Article 1 —</span> Éditeur du Site
               </h2>
               <p className="leading-relaxed mb-4">
                 Le site internet <strong>comptoirbativoir.com</strong> est édité par :
@@ -141,15 +141,15 @@ export default function LegalPage() {
                     <tr className="border-b border-neutral-200 dark:border-neutral-700">
                       <td className="py-3 pr-4 font-semibold whitespace-nowrap text-neutral-900 dark:text-white">Téléphone</td>
                       <td className="py-3">
-                        <a href="tel:+2252722266533" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 27 22 26 65 33</a>
+                        <a href="tel:+2252722266533" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">+225 27 22 26 65 33</a>
                         {' / '}
-                        <a href="tel:+2250799141199" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 07 99 14 11 99</a>
+                        <a href="tel:+2250799141199" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">+225 07 99 14 11 99</a>
                       </td>
                     </tr>
                     <tr className="border-b border-neutral-200 dark:border-neutral-700">
                       <td className="py-3 pr-4 font-semibold whitespace-nowrap text-neutral-900 dark:text-white">E-mail</td>
                       <td className="py-3">
-                        <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                        <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                           comptoirbatisseurivoiriens@gmail.com
                         </a>
                       </td>
@@ -157,7 +157,7 @@ export default function LegalPage() {
                     <tr>
                       <td className="py-3 pr-4 font-semibold whitespace-nowrap text-neutral-900 dark:text-white">Site internet</td>
                       <td className="py-3">
-                        <a href="https://comptoirbativoir.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                        <a href="https://comptoirbativoir.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                           comptoirbativoir.com
                         </a>
                       </td>
@@ -169,7 +169,7 @@ export default function LegalPage() {
 
             <AnimatedSection id="directeur">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 2 —</span> Directeur de Publication
+                <span className="text-orange-500 mr-2">Article 2 —</span> Directeur de Publication
               </h2>
               <p className="leading-relaxed mb-4">
                 Le Directeur de la publication du Site est :
@@ -179,7 +179,7 @@ export default function LegalPage() {
                 <p className="mb-1">En qualité de : [Fonction — ex. : Gérant / Directeur Général]</p>
                 <p>
                   Contact :{' '}
-                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                     comptoirbatisseurivoiriens@gmail.com
                   </a>
                 </p>
@@ -188,7 +188,7 @@ export default function LegalPage() {
 
             <AnimatedSection id="hebergeur">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 3 —</span> Hébergeur
+                <span className="text-orange-500 mr-2">Article 3 —</span> Hébergeur
               </h2>
               <p className="leading-relaxed mb-4">
                 Le Site est hébergé par :
@@ -203,7 +203,7 @@ export default function LegalPage() {
 
             <AnimatedSection id="propriete">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 4 —</span> Propriété Intellectuelle
+                <span className="text-orange-500 mr-2">Article 4 —</span> Propriété Intellectuelle
               </h2>
               <p className="leading-relaxed mb-4">
                 L&apos;ensemble du contenu du Site (textes, images, graphismes, logo, icônes, sons, logiciels, etc.) est
@@ -226,12 +226,12 @@ export default function LegalPage() {
 
             <AnimatedSection id="conditions">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 5 —</span> Conditions d&apos;Utilisation
+                <span className="text-orange-500 mr-2">Article 5 —</span> Conditions d&apos;Utilisation
               </h2>
               <p className="leading-relaxed mb-4">
                 L&apos;utilisation du Site implique l&apos;acceptation pleine et entière des conditions générales
                 d&apos;utilisation décrites dans nos{' '}
-                <a href="/terms" className="text-amber-600 dark:text-amber-400 hover:text-amber-500 underline underline-offset-2">
+                <a href="/terms" className="text-orange-600 dark:text-orange-400 hover:text-orange-500 underline underline-offset-2">
                   Conditions Générales d&apos;Utilisation
                 </a>.
               </p>
@@ -249,7 +249,7 @@ export default function LegalPage() {
 
             <AnimatedSection id="limitation">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 6 —</span> Limitation de Responsabilité
+                <span className="text-orange-500 mr-2">Article 6 —</span> Limitation de Responsabilité
               </h2>
               <p className="leading-relaxed mb-4">
                 CBI ne pourra être tenue responsable des dommages directs et indirects causés au matériel de

@@ -24,7 +24,7 @@ function PageBanner() {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            'linear-gradient(#f59e0b 1px, transparent 1px), linear-gradient(90deg, #f59e0b 1px, transparent 1px)',
+            'linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -34,9 +34,9 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-50 dark:bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-50 dark:bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
           Restons en contact
         </motion.span>
 
@@ -47,7 +47,7 @@ function PageBanner() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           Contactez-
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             nous
           </span>
         </motion.h1>
@@ -120,7 +120,7 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.06 }}
-      className="border border-neutral-200 dark:border-neutral-700 rounded-xl overflow-hidden hover:border-amber-500/20 dark:hover:border-amber-500/20 transition-colors duration-300"
+      className="border border-neutral-200 dark:border-neutral-700 rounded-xl overflow-hidden hover:border-orange-500/20 dark:hover:border-orange-500/20 transition-colors duration-300"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -132,7 +132,7 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
           transition={{ duration: 0.3, ease: 'easeInOut' as const }}
           className="flex-shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-amber-500 dark:text-amber-400" />
+          <ChevronDown className="w-5 h-5 text-orange-500 dark:text-orange-400" />
         </motion.div>
       </button>
 
@@ -162,7 +162,7 @@ function FAQSection() {
   return (
     <section ref={ref} className="relative py-24 bg-neutral-50 dark:bg-neutral-900 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.05),transparent_60%)]" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-6 lg:px-8">
         <motion.div
@@ -171,12 +171,12 @@ function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-50 dark:bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-50 dark:bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
             FAQ
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-3">
             Questions{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
               fréquentes
             </span>
           </h2>
@@ -204,7 +204,7 @@ export default function ContactPage() {
       <Header />
       <main>
         <PageBanner />
-        <ContactSection />
+        <ContactSection hideHeader />
         <FAQSection />
       </main>
       <Footer />

@@ -29,7 +29,7 @@ function FloatingParticles() {
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full bg-amber-500/20"
+          className="absolute rounded-full bg-orange-500/20"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
@@ -115,14 +115,14 @@ function BrokenCableSVG() {
         {/* Cable */}
         <path
           d="M 50 80 Q 100 85 160 140"
-          stroke="#f59e0b"
+          stroke="#f97316"
           strokeWidth="6"
           fill="none"
           strokeLinecap="round"
         />
         <path
           d="M 50 80 Q 100 85 160 140"
-          stroke="#fbbf24"
+          stroke="#fb923c"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"
@@ -137,9 +137,9 @@ function BrokenCableSVG() {
         {/* Cable strain relief */}
         <ellipse cx="160" cy="132" rx="8" ry="4" fill="#1f2937" />
         {/* Broken end sparks */}
-        <circle cx="158" cy="190" r="3" fill="#f59e0b" className="spark-1" />
-        <circle cx="165" cy="188" r="2.5" fill="#fbbf24" className="spark-2" />
-        <circle cx="152" cy="185" r="2" fill="#f59e0b" className="spark-3" />
+        <circle cx="158" cy="190" r="3" fill="#f97316" className="spark-1" />
+        <circle cx="165" cy="188" r="2.5" fill="#fb923c" className="spark-2" />
+        <circle cx="152" cy="185" r="2" fill="#f97316" className="spark-3" />
       </g>
 
       {/* Right cable with socket */}
@@ -147,14 +147,14 @@ function BrokenCableSVG() {
         {/* Cable */}
         <path
           d="M 350 80 Q 300 85 240 140"
-          stroke="#f59e0b"
+          stroke="#f97316"
           strokeWidth="6"
           fill="none"
           strokeLinecap="round"
         />
         <path
           d="M 350 80 Q 300 85 240 140"
-          stroke="#fbbf24"
+          stroke="#fb923c"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"
@@ -175,33 +175,33 @@ function BrokenCableSVG() {
         {/* Lightning bolt */}
         <path
           d="M 195 155 L 200 165 L 193 165 L 198 180 L 202 168 L 196 168 L 205 155 Z"
-          fill="#f59e0b"
+          fill="#f97316"
         />
         <path
           d="M 195 155 L 200 165 L 193 165 L 198 180 L 202 168 L 196 168 L 205 155 Z"
-          fill="#fbbf24"
+          fill="#fb923c"
           opacity="0.6"
           transform="translate(2, -2) scale(0.8)"
         />
       </g>
 
       {/* Scattered spark particles */}
-      <circle cx="190" cy="150" r="1.5" fill="#fbbf24" className="spark-1" />
-      <circle cx="210" cy="148" r="2" fill="#f59e0b" className="spark-2" />
-      <circle cx="200" cy="142" r="1" fill="#fbbf24" className="spark-3" />
-      <circle cx="185" cy="160" r="1.5" fill="#f59e0b" className="spark-2" />
-      <circle cx="215" cy="158" r="1" fill="#fbbf24" className="spark-1" />
+      <circle cx="190" cy="150" r="1.5" fill="#fb923c" className="spark-1" />
+      <circle cx="210" cy="148" r="2" fill="#f97316" className="spark-2" />
+      <circle cx="200" cy="142" r="1" fill="#fb923c" className="spark-3" />
+      <circle cx="185" cy="160" r="1.5" fill="#f97316" className="spark-2" />
+      <circle cx="215" cy="158" r="1" fill="#fb923c" className="spark-1" />
 
       {/* Electric arc lines */}
-      <path d="M 175 175 Q 185 168 195 178" stroke="#f59e0b" strokeWidth="1" fill="none" opacity="0.5" className="spark-flash" />
-      <path d="M 205 175 Q 215 168 225 178" stroke="#fbbf24" strokeWidth="1" fill="none" opacity="0.4" className="spark-flash" />
+      <path d="M 175 175 Q 185 168 195 178" stroke="#f97316" strokeWidth="1" fill="none" opacity="0.5" className="spark-flash" />
+      <path d="M 205 175 Q 215 168 225 178" stroke="#fb923c" strokeWidth="1" fill="none" opacity="0.4" className="spark-flash" />
 
       {/* Ground shadow */}
       <ellipse cx="200" cy="220" rx="80" ry="8" fill="url(#shadow)" />
       <defs>
         <radialGradient id="shadow">
-          <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+          <stop offset="0%" stopColor="#f97316" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#f97316" stopOpacity="0" />
         </radialGradient>
       </defs>
     </svg>
@@ -243,17 +243,17 @@ export default function NotFound() {
           >
             <style>{`
               @keyframes glitch {
-                0%, 100% { text-shadow: 2px 0 #f59e0b, -2px 0 #3b82f6; transform: translate(0); }
-                2% { text-shadow: -2px 0 #f59e0b, 2px 0 #3b82f6; transform: translate(2px, -1px); }
-                4% { text-shadow: 2px 0 #f59e0b, -2px 0 #3b82f6; transform: translate(-2px, 1px); }
+                0%, 100% { text-shadow: 2px 0 #f97316, -2px 0 #3b82f6; transform: translate(0); }
+                2% { text-shadow: -2px 0 #f97316, 2px 0 #3b82f6; transform: translate(2px, -1px); }
+                4% { text-shadow: 2px 0 #f97316, -2px 0 #3b82f6; transform: translate(-2px, 1px); }
                 6% { text-shadow: 0 0 transparent; transform: translate(0); }
-                20% { text-shadow: 2px 0 #f59e0b, -2px 0 #3b82f6; }
-                22% { text-shadow: -3px 0 #f59e0b, 3px 0 #3b82f6; transform: translate(3px, 0); }
+                20% { text-shadow: 2px 0 #f97316, -2px 0 #3b82f6; }
+                22% { text-shadow: -3px 0 #f97316, 3px 0 #3b82f6; transform: translate(3px, 0); }
                 24% { text-shadow: 0 0 transparent; transform: translate(0); }
-                50% { text-shadow: 2px 0 #f59e0b, -2px 0 #3b82f6; }
-                52% { text-shadow: -1px 2px #f59e0b, 1px -2px #3b82f6; transform: translate(-1px, 2px); }
+                50% { text-shadow: 2px 0 #f97316, -2px 0 #3b82f6; }
+                52% { text-shadow: -1px 2px #f97316, 1px -2px #3b82f6; transform: translate(-1px, 2px); }
                 54% { text-shadow: 0 0 transparent; transform: translate(0); }
-                80% { text-shadow: 2px 0 #f59e0b, -2px 0 #3b82f6; }
+                80% { text-shadow: 2px 0 #f97316, -2px 0 #3b82f6; }
                 82% { clip-path: inset(30% 0 40% 0); transform: translate(-4px, 0); }
                 84% { clip-path: inset(60% 0 10% 0); transform: translate(4px, 0); }
                 86% { clip-path: inset(0); transform: translate(0); }
@@ -318,9 +318,9 @@ export default function NotFound() {
           >
             <Link
               href="/"
-              className="group inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-gray-950 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-gray-950 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25 hover:scale-105 active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                background: 'linear-gradient(135deg, #f97316, #ea580c)',
               }}
             >
               <Home size={18} />

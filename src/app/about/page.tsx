@@ -82,7 +82,7 @@ function OfficeBuildingSVG() {
       {/* Ground line */}
       <motion.line
         x1="30" y1="360" x2="470" y2="360"
-        stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="6 4"
+        stroke="#f97316" strokeWidth="1.5" strokeDasharray="6 4"
         filter="url(#aboutGlow)"
         {...draw(0.2, 1.5)}
       />
@@ -90,7 +90,7 @@ function OfficeBuildingSVG() {
       {/* Main building */}
       <motion.rect
         x="120" y="100" width="160" height="260" rx="4"
-        stroke="#f59e0b" strokeWidth="2" fill="#f59e0b" fillOpacity="0.03"
+        stroke="#f97316" strokeWidth="2" fill="#f97316" fillOpacity="0.03"
         filter="url(#aboutGlow)"
         {...draw(0.3, 2)}
       />
@@ -98,11 +98,11 @@ function OfficeBuildingSVG() {
       {/* Building top / antenna */}
       <motion.line
         x1="200" y1="100" x2="200" y2="60"
-        stroke="#f59e0b" strokeWidth="2" filter="url(#aboutGlow)"
+        stroke="#f97316" strokeWidth="2" filter="url(#aboutGlow)"
         {...draw(0.8, 1)}
       />
       <motion.circle
-        cx="200" cy="55" r="5" stroke="#f59e0b" strokeWidth="1.5" fill="#f59e0b" fillOpacity="0.2"
+        cx="200" cy="55" r="5" stroke="#f97316" strokeWidth="1.5" fill="#f97316" fillOpacity="0.2"
         filter="url(#aboutGlowStrong)"
         animate={{ r: [4, 6, 4], opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' as const }}
@@ -113,7 +113,7 @@ function OfficeBuildingSVG() {
         <motion.path
           key={`signal-${i}`}
           d={`M ${205 + i * 12} ${50 - i * 5} Q ${215 + i * 15} ${35 - i * 8} ${210 + i * 12} ${20 - i * 5}`}
-          stroke="#f59e0b" strokeWidth={1.5 - i * 0.3} strokeLinecap="round" fill="none"
+          stroke="#f97316" strokeWidth={1.5 - i * 0.3} strokeLinecap="round" fill="none"
           filter="url(#aboutGlow)"
           animate={{ opacity: [0, 0.8, 0] }}
           transition={{ duration: 2, delay: 1.5 + i * 0.4, repeat: Infinity, ease: 'easeInOut' as const }}
@@ -130,9 +130,9 @@ function OfficeBuildingSVG() {
             width="25"
             height="30"
             rx="2"
-            stroke="#f59e0b"
+            stroke="#f97316"
             strokeWidth="1"
-            fill="#f59e0b"
+            fill="#f97316"
             fillOpacity="0.08"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -156,7 +156,7 @@ function OfficeBuildingSVG() {
           width="25"
           height="30"
           rx="2"
-          fill="#f59e0b"
+          fill="#f97316"
           fillOpacity="0.15"
           animate={{ fillOpacity: [0.05, 0.2, 0.05] }}
           transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: 'easeInOut' as const, delay: i * 0.8 }}
@@ -166,14 +166,14 @@ function OfficeBuildingSVG() {
       {/* Door */}
       <motion.rect
         x="180" y="325" width="40" height="35" rx="3"
-        stroke="#f59e0b" strokeWidth="1.5" fill="#f59e0b" fillOpacity="0.1"
+        stroke="#f97316" strokeWidth="1.5" fill="#f97316" fillOpacity="0.1"
         {...draw(1.2, 1)}
       />
 
       {/* Left smaller building */}
       <motion.rect
         x="40" y="200" width="70" height="160" rx="3"
-        stroke="#f59e0b" strokeWidth="1.5" fill="#f59e0b" fillOpacity="0.02"
+        stroke="#f97316" strokeWidth="1.5" fill="#f97316" fillOpacity="0.02"
         filter="url(#aboutGlow)"
         {...draw(0.5, 1.8)}
       />
@@ -186,9 +186,9 @@ function OfficeBuildingSVG() {
             width="18"
             height="25"
             rx="2"
-            stroke="#f59e0b"
+            stroke="#f97316"
             strokeWidth="0.8"
-            fill="#f59e0b"
+            fill="#f97316"
             fillOpacity="0.06"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -200,7 +200,7 @@ function OfficeBuildingSVG() {
       {/* Right smaller building */}
       <motion.rect
         x="290" y="230" width="80" height="130" rx="3"
-        stroke="#f59e0b" strokeWidth="1.5" fill="#f59e0b" fillOpacity="0.02"
+        stroke="#f97316" strokeWidth="1.5" fill="#f97316" fillOpacity="0.02"
         filter="url(#aboutGlow)"
         {...draw(0.6, 1.8)}
       />
@@ -213,9 +213,9 @@ function OfficeBuildingSVG() {
             width="20"
             height="28"
             rx="2"
-            stroke="#f59e0b"
+            stroke="#f97316"
             strokeWidth="0.8"
-            fill="#f59e0b"
+            fill="#f97316"
             fillOpacity="0.06"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -227,13 +227,13 @@ function OfficeBuildingSVG() {
       {/* Circuit paths connecting buildings */}
       <motion.path
         d="M 110 280 L 120 280"
-        stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" fill="none"
+        stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" fill="none"
         filter="url(#aboutGlow)"
         {...draw(2, 0.5)}
       />
       <motion.path
         d="M 280 300 L 290 300"
-        stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" fill="none"
+        stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" fill="none"
         filter="url(#aboutGlow)"
         {...draw(2.1, 0.5)}
       />
@@ -241,7 +241,7 @@ function OfficeBuildingSVG() {
       {/* Electrical symbol - lightning bolt */}
       <motion.path
         d="M 400 120 L 415 155 L 405 155 L 420 195"
-        stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+        stroke="#f97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
         fill="none" filter="url(#aboutGlowStrong)"
         animate={{ opacity: [0.3, 1, 0.3] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' as const }}
@@ -251,29 +251,29 @@ function OfficeBuildingSVG() {
       <motion.g filter="url(#aboutGlow)">
         <motion.line
           x1="410" y1="195" x2="410" y2="215"
-          stroke="#f59e0b" strokeWidth="2"
+          stroke="#f97316" strokeWidth="2"
           {...draw(2.5, 0.5)}
         />
         <motion.line
           x1="398" y1="215" x2="422" y2="215"
-          stroke="#f59e0b" strokeWidth="2"
+          stroke="#f97316" strokeWidth="2"
           {...draw(2.6, 0.3)}
         />
         <motion.line
           x1="402" y1="222" x2="418" y2="222"
-          stroke="#f59e0b" strokeWidth="1.5"
+          stroke="#f97316" strokeWidth="1.5"
           {...draw(2.7, 0.3)}
         />
         <motion.line
           x1="406" y1="229" x2="414" y2="229"
-          stroke="#f59e0b" strokeWidth="1"
+          stroke="#f97316" strokeWidth="1"
           {...draw(2.8, 0.3)}
         />
       </motion.g>
 
       {/* Animated energy pulse along circuit path */}
       <motion.circle
-        cx="0" cy="0" r="3" fill="#f59e0b" filter="url(#aboutGlowStrong)"
+        cx="0" cy="0" r="3" fill="#f97316" filter="url(#aboutGlowStrong)"
       >
         <animateMotion
           dur="4s"
@@ -285,14 +285,14 @@ function OfficeBuildingSVG() {
       {/* Power line from building to right */}
       <motion.path
         d="M 370 300 C 390 300 400 280 420 280 L 460 280"
-        stroke="#f59e0b" strokeWidth="1" fill="none" strokeDasharray="4 3"
+        stroke="#f97316" strokeWidth="1" fill="none" strokeDasharray="4 3"
         filter="url(#aboutGlow)"
         {...draw(2.2, 1.5)}
       />
 
       {/* Pulsing dot at circuit end */}
       <motion.circle
-        cx="460" cy="280" r="4" fill="#f59e0b" filter="url(#aboutGlowStrong)"
+        cx="460" cy="280" r="4" fill="#f97316" filter="url(#aboutGlowStrong)"
         animate={{ r: [3, 6, 3], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' as const }}
       />
@@ -319,7 +319,7 @@ function PageBanner() {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            'linear-gradient(#f59e0b 1px, transparent 1px), linear-gradient(90deg, #f59e0b 1px, transparent 1px)',
+            'linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -329,9 +329,9 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
           Qui sommes-nous
         </motion.span>
 
@@ -342,7 +342,7 @@ function PageBanner() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           La{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             Société
           </span>
         </motion.h1>
@@ -426,12 +426,12 @@ function Timeline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Notre Parcours
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Années de{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
               Croissance
             </span>
           </h2>
@@ -443,7 +443,7 @@ function Timeline() {
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
             transition={{ duration: 1.5, ease: 'easeInOut' as const }}
-            className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/50 via-amber-500/20 to-transparent origin-top hidden md:block"
+            className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-500/50 via-orange-500/20 to-transparent origin-top hidden md:block"
           />
 
           <div className="space-y-12 md:space-y-0">
@@ -464,11 +464,11 @@ function Timeline() {
                   {/* Content */}
                   <div className={`md:w-[calc(50%-2rem)] ${isLeft ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}`}>
                     <div
-                      className={`p-6 rounded-xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 transition-colors duration-300 ${
+                      className={`p-6 rounded-xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 hover:border-orange-500/30 transition-colors duration-300 ${
                         isLeft ? 'md:ml-auto' : 'md:mr-auto'
                       }`}
                     >
-                      <span className="inline-block px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-bold rounded-full mb-3">
+                      <span className="inline-block px-3 py-1 bg-orange-500/10 text-orange-600 dark:text-orange-400 text-sm font-bold rounded-full mb-3">
                         {milestone.year}
                       </span>
                       <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">{milestone.title}</h3>
@@ -477,8 +477,8 @@ function Timeline() {
                   </div>
 
                   {/* Center dot */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white dark:bg-neutral-900 border-2 border-amber-500/50 items-center justify-center z-10">
-                    <Icon className="w-5 h-5 text-amber-400" />
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white dark:bg-neutral-900 border-2 border-orange-500/50 items-center justify-center z-10">
+                    <Icon className="w-5 h-5 text-orange-400" />
                   </div>
 
                   {/* Empty space for the other side */}
@@ -512,20 +512,20 @@ function DetailedAbout() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6">
               À propos de CBI
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
               Notre{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Histoire
               </span>
             </h2>
 
             <div className="space-y-5 text-neutral-600 dark:text-neutral-300 leading-relaxed">
               <p>{companyInfo.about}</p>
-              <p className="text-amber-600 dark:text-amber-400/90 font-medium border-l-2 border-amber-500/50 pl-4">
+              <p className="text-orange-600 dark:text-orange-400/90 font-medium border-l-2 border-orange-500/50 pl-4">
                 {companyInfo.mission}
               </p>
             </div>
@@ -544,7 +544,7 @@ function DetailedAbout() {
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
                   className="p-4 rounded-lg bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700"
                 >
-                  <div className="text-2xl font-bold text-amber-500">{stat.value}</div>
+                  <div className="text-2xl font-bold text-orange-500">{stat.value}</div>
                   <div className="text-neutral-500 dark:text-neutral-400 text-sm">{stat.label}</div>
                 </motion.div>
               ))}
@@ -589,7 +589,7 @@ function ExpertiseSection() {
   return (
     <section ref={ref} className="relative py-24 bg-white dark:bg-neutral-950 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.04),transparent_50%)]" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
@@ -598,12 +598,12 @@ function ExpertiseSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Nos Domaines
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Nos{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
               Expertises
             </span>
           </h2>
@@ -622,14 +622,14 @@ function ExpertiseSection() {
                 key={item}
                 variants={fadeInUp}
                 custom={i}
-                className="group flex items-center gap-4 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-all duration-300"
+                className="group flex items-center gap-4 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-700 hover:border-orange-500/30 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors"
+                  className="flex-shrink-0 w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors"
                 >
-                  <Icon className="w-5 h-5 text-amber-400" />
+                  <Icon className="w-5 h-5 text-orange-400" />
                 </motion.div>
                 <span className="text-neutral-600 dark:text-neutral-300 text-sm font-medium group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
                   {item}
@@ -652,28 +652,28 @@ const values = [
     description:
       'Nous nous engageons à fournir un travail de haute qualité, conforme aux normes les plus strictes du secteur électrique.',
     icon: Award,
-    gradient: 'from-amber-500 to-yellow-500',
+    gradient: 'from-orange-500 to-yellow-500',
   },
   {
     title: 'Réactivité',
     description:
       'Notre équipe intervient rapidement pour répondre à vos urgences et respecter vos délais de projet.',
     icon: Clock,
-    gradient: 'from-amber-500 to-orange-500',
+    gradient: 'from-orange-500 to-orange-500',
   },
   {
     title: 'Expertise',
     description:
       'Des années d\'expérience et une formation continue garantissent une maîtrise parfaite de nos métiers.',
     icon: Shield,
-    gradient: 'from-amber-600 to-amber-400',
+    gradient: 'from-orange-600 to-orange-400',
   },
   {
     title: 'Confiance',
     description:
       'La transparence et le sérieux de nos interventions font de nous un partenaire de confiance durable.',
     icon: Users,
-    gradient: 'from-yellow-500 to-amber-500',
+    gradient: 'from-yellow-500 to-orange-500',
   },
 ]
 
@@ -692,12 +692,12 @@ function ValuesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
             Ce qui nous guide
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">
             Nos{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
               Valeurs
             </span>
           </h2>
@@ -715,11 +715,11 @@ function ValuesSection() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
+                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-orange-500/20 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
 
-                <div className="relative h-full rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 p-8 text-center overflow-hidden group-hover:border-amber-500/30 transition-colors duration-300">
+                <div className="relative h-full rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 p-8 text-center overflow-hidden group-hover:border-orange-500/30 transition-colors duration-300">
                   {/* Glow overlay */}
-                  <div className="absolute inset-0 bg-amber-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-orange-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
@@ -727,10 +727,10 @@ function ValuesSection() {
                     className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${value.gradient} bg-opacity-10 mb-6`}
                     style={{ background: `linear-gradient(135deg, rgba(245,158,11,0.15), rgba(217,119,6,0.1))` }}
                   >
-                    <Icon className="w-7 h-7 text-amber-400" />
+                    <Icon className="w-7 h-7 text-orange-400" />
                   </motion.div>
 
-                  <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
                     {value.title}
                   </h3>
                   <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{value.description}</p>

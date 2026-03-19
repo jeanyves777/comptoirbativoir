@@ -59,14 +59,14 @@ function StatCard({ icon, value, label, suffix = '+', index, inView }: StatCardP
       className="rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm dark:shadow-none p-6 sm:p-8 flex flex-col items-center gap-3"
     >
       {/* Icon */}
-      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400">
+      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400">
         {icon}
       </div>
 
       {/* Number */}
       <div className="text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tabular-nums tracking-tight">
         {count.toLocaleString('fr-FR')}
-        <span className="text-amber-500">{suffix}</span>
+        <span className="text-orange-500">{suffix}</span>
       </div>
 
       {/* Label */}
@@ -104,7 +104,7 @@ export default function Stats() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400 dark:border-orange-500/20 text-xs font-semibold uppercase tracking-widest mb-4">
             En chiffres
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white">

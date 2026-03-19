@@ -283,7 +283,7 @@ export default function AdminBlogPage() {
         </div>
         <div className="bg-dark-light border border-dark-lighter rounded-xl p-4">
           <p className="text-gray-500 text-xs uppercase tracking-wider">Brouillons</p>
-          <p className="text-2xl font-bold text-amber-400 mt-1">
+          <p className="text-2xl font-bold text-orange-400 mt-1">
             {posts.filter((p) => !p.published).length}
           </p>
         </div>
@@ -335,7 +335,7 @@ export default function AdminBlogPage() {
                           className={`text-xs px-2 py-0.5 rounded-full shrink-0 ${
                             post.published
                               ? 'bg-emerald-500/10 text-emerald-400'
-                              : 'bg-amber-500/10 text-amber-400'
+                              : 'bg-orange-500/10 text-orange-400'
                           }`}
                         >
                           {post.published ? 'Publie' : 'Brouillon'}

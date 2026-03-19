@@ -40,7 +40,7 @@ function PageBanner() {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            'linear-gradient(#f59e0b 1px, transparent 1px), linear-gradient(90deg, #f59e0b 1px, transparent 1px)',
+            'linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -50,9 +50,9 @@ function PageBanner() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/5 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
           Gratuit et sans engagement
         </motion.span>
 
@@ -63,7 +63,7 @@ function PageBanner() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-6"
         >
           Demander un{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             Devis
           </span>
         </motion.h1>
@@ -111,14 +111,14 @@ function FloatingField({
   error,
 }: FloatingFieldProps) {
   const baseClass =
-    'peer w-full bg-white dark:bg-neutral-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 text-neutral-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-colors'
+    'peer w-full bg-white dark:bg-neutral-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 text-neutral-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-colors'
   const borderClass = error
     ? 'border-red-500'
-    : 'border-neutral-300 dark:border-neutral-600 focus:border-amber-500'
+    : 'border-neutral-300 dark:border-neutral-600 focus:border-orange-500'
 
   return (
     <div className="relative">
-      <div className="absolute left-3.5 top-4 text-neutral-400 dark:text-neutral-500 peer-focus:text-amber-500 dark:peer-focus:text-amber-400 transition-colors z-10">
+      <div className="absolute left-3.5 top-4 text-neutral-400 dark:text-neutral-500 peer-focus:text-orange-500 dark:peer-focus:text-orange-400 transition-colors z-10">
         {icon}
       </div>
       {textarea ? (
@@ -144,7 +144,7 @@ function FloatingField({
       )}
       <label
         htmlFor={id}
-        className="absolute left-11 top-1.5 text-xs text-neutral-400 dark:text-neutral-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-amber-500 dark:peer-focus:text-amber-400 transition-all pointer-events-none"
+        className="absolute left-11 top-1.5 text-xs text-neutral-400 dark:text-neutral-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-orange-500 dark:peer-focus:text-orange-400 transition-all pointer-events-none"
       >
         {label}
       </label>
@@ -167,7 +167,7 @@ interface SelectFieldProps {
 }
 
 function SelectField({ id, label, icon, options, value, onChange, error }: SelectFieldProps) {
-  const borderClass = error ? 'border-red-500' : 'border-neutral-300 dark:border-neutral-600 focus:border-amber-500'
+  const borderClass = error ? 'border-red-500' : 'border-neutral-300 dark:border-neutral-600 focus:border-orange-500'
 
   return (
     <div className="relative">
@@ -176,7 +176,7 @@ function SelectField({ id, label, icon, options, value, onChange, error }: Selec
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className={`w-full bg-white dark:bg-neutral-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 pr-10 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-colors appearance-none ${borderClass} ${
+        className={`w-full bg-white dark:bg-neutral-900/60 border rounded-lg px-4 pt-6 pb-2 pl-11 pr-10 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-colors appearance-none ${borderClass} ${
           !value ? 'text-neutral-400 dark:text-neutral-500' : ''
         }`}
       >
@@ -192,7 +192,7 @@ function SelectField({ id, label, icon, options, value, onChange, error }: Selec
       <label
         htmlFor={id}
         className={`absolute left-11 text-xs pointer-events-none transition-all ${
-          value ? 'top-1.5 text-amber-500 dark:text-amber-400' : 'top-1.5 text-neutral-400 dark:text-neutral-500'
+          value ? 'top-1.5 text-orange-500 dark:text-orange-400' : 'top-1.5 text-neutral-400 dark:text-neutral-500'
         }`}
       >
         {label}
@@ -212,17 +212,17 @@ function ContactSidePanel() {
 
   const contactItems = [
     {
-      icon: <Phone className="w-5 h-5 text-amber-500 dark:text-amber-400" />,
+      icon: <Phone className="w-5 h-5 text-orange-500 dark:text-orange-400" />,
       title: 'Telephone',
       lines: companyInfo.phones,
     },
     {
-      icon: <Mail className="w-5 h-5 text-amber-500 dark:text-amber-400" />,
+      icon: <Mail className="w-5 h-5 text-orange-500 dark:text-orange-400" />,
       title: 'Email',
       lines: companyInfo.emails,
     },
     {
-      icon: <MapPin className="w-5 h-5 text-amber-500 dark:text-amber-400" />,
+      icon: <MapPin className="w-5 h-5 text-orange-500 dark:text-orange-400" />,
       title: 'Adresse',
       lines: [companyInfo.address],
     },
@@ -249,9 +249,9 @@ function ContactSidePanel() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-          className="group flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 hover:border-amber-500/30 transition-colors duration-300"
+          className="group flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 hover:border-orange-500/30 transition-colors duration-300"
         >
-          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
+          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
             {item.icon}
           </div>
           <div>
@@ -281,7 +281,7 @@ function ContactSidePanel() {
             { step: '04', text: 'Validation et debut des travaux' },
           ].map((item, i) => (
             <div key={item.step} className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold flex items-center justify-center">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-bold flex items-center justify-center">
                 {item.step}
               </span>
               <span className="text-neutral-500 dark:text-neutral-400 text-sm pt-1">{item.text}</span>
@@ -498,7 +498,7 @@ function QuoteFormSection() {
                   disabled={loading}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white dark:text-neutral-950 font-bold rounded-lg overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed transition-shadow hover:shadow-lg hover:shadow-amber-500/25"
+                  className="relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white dark:text-neutral-950 font-bold rounded-lg overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed transition-shadow hover:shadow-lg hover:shadow-orange-500/25"
                 >
                   {/* Shimmer */}
                   <motion.span

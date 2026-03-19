@@ -59,8 +59,8 @@ export default function TermsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6">
-                <FileText className="w-8 h-8 text-amber-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 mb-6">
+                <FileText className="w-8 h-8 text-orange-500" />
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
                 Conditions Générales d&apos;Utilisation
@@ -88,10 +88,10 @@ export default function TermsPage() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-amber-500"
+                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-orange-500"
                   >
-                    <ChevronRight size={14} className="text-amber-500/60" />
-                    <span className="text-amber-500/60 font-mono text-xs">Article {index + 1}</span>
+                    <ChevronRight size={14} className="text-orange-500/60" />
+                    <span className="text-orange-500/60 font-mono text-xs">Article {index + 1}</span>
                     {item.label}
                   </a>
                 </li>
@@ -103,7 +103,7 @@ export default function TermsPage() {
           <div className="legal-content text-neutral-600 dark:text-neutral-300">
             <AnimatedSection id="objet">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 1 —</span> Objet
+                <span className="text-orange-500 mr-2">Article 1 —</span> Objet
               </h2>
               <p className="leading-relaxed mb-4">
                 Les présentes Conditions Générales d&apos;Utilisation (ci-après « CGU ») ont pour objet de définir les
@@ -123,7 +123,7 @@ export default function TermsPage() {
 
             <AnimatedSection id="acces">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 2 —</span> Accès au Site
+                <span className="text-orange-500 mr-2">Article 2 —</span> Accès au Site
               </h2>
               <p className="leading-relaxed mb-4">
                 Le Site est accessible gratuitement à tout utilisateur disposant d&apos;un accès à Internet. Tous les
@@ -145,7 +145,7 @@ export default function TermsPage() {
 
             <AnimatedSection id="propriete">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 3 —</span> Propriété Intellectuelle
+                <span className="text-orange-500 mr-2">Article 3 —</span> Propriété Intellectuelle
               </h2>
               <p className="leading-relaxed mb-4">
                 L&apos;ensemble des éléments composant le Site (textes, graphismes, logiciels, photographies, images,
@@ -169,7 +169,7 @@ export default function TermsPage() {
 
             <AnimatedSection id="responsabilite">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 4 —</span> Responsabilité
+                <span className="text-orange-500 mr-2">Article 4 —</span> Responsabilité
               </h2>
               <p className="leading-relaxed mb-4">
                 Les informations diffusées sur le Site sont présentées à titre purement informatif et ne sauraient
@@ -196,7 +196,7 @@ export default function TermsPage() {
 
             <AnimatedSection id="liens">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 5 —</span> Liens Hypertextes
+                <span className="text-orange-500 mr-2">Article 5 —</span> Liens Hypertextes
               </h2>
               <p className="leading-relaxed mb-4">
                 Le Site peut contenir des liens hypertextes vers d&apos;autres sites internet. CBI n&apos;exerce aucun
@@ -206,7 +206,7 @@ export default function TermsPage() {
               <p className="leading-relaxed mb-4">
                 La mise en place de liens hypertextes vers le Site est soumise à l&apos;autorisation préalable et écrite
                 de CBI. Toute demande d&apos;autorisation doit être adressée à l&apos;adresse e-mail suivante :{' '}
-                <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                   comptoirbatisseurivoiriens@gmail.com
                 </a>.
               </p>
@@ -218,7 +218,7 @@ export default function TermsPage() {
 
             <AnimatedSection id="droit">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 6 —</span> Droit Applicable
+                <span className="text-orange-500 mr-2">Article 6 —</span> Droit Applicable
               </h2>
               <p className="leading-relaxed mb-4">
                 Les présentes CGU sont régies par le droit ivoirien. Elles sont soumises aux lois et réglementations
@@ -239,7 +239,7 @@ export default function TermsPage() {
 
             <AnimatedSection id="litiges">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 7 —</span> Litiges
+                <span className="text-orange-500 mr-2">Article 7 —</span> Litiges
               </h2>
               <p className="leading-relaxed mb-4">
                 En cas de litige relatif à l&apos;interprétation ou à l&apos;exécution des présentes CGU, les parties
@@ -260,11 +260,11 @@ export default function TermsPage() {
                 <p className="mb-1">Abidjan, Côte d&apos;Ivoire</p>
                 <p className="mb-1">
                   Téléphone :{' '}
-                  <a href="tel:+2252722266533" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 27 22 26 65 33</a>
+                  <a href="tel:+2252722266533" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">+225 27 22 26 65 33</a>
                 </p>
                 <p>
                   E-mail :{' '}
-                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                     comptoirbatisseurivoiriens@gmail.com
                   </a>
                 </p>

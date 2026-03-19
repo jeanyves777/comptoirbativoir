@@ -82,7 +82,7 @@ function FloatingPill({
         animate={{ y: [0, -4, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
-        <p className="text-lg font-bold text-amber-500">{value}</p>
+        <p className="text-lg font-bold text-orange-500">{value}</p>
         <p className="text-[10px] font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
           {label}
         </p>
@@ -189,7 +189,7 @@ export default function Hero() {
             }}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               i === current
-                ? "w-8 bg-amber-500"
+                ? "w-8 bg-orange-500"
                 : "w-3 bg-white/40 hover:bg-white/60"
             }`}
             aria-label={`Image ${i + 1}`}
@@ -208,7 +208,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border bg-white/10 backdrop-blur-sm text-white border-white/20 text-sm font-medium tracking-wide"
           >
-            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
             {companyInfo.shortName}
           </motion.div>
 
@@ -237,14 +237,14 @@ export default function Hero() {
           >
             <a
               href="/services"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-amber-500 text-white font-semibold text-sm tracking-wide hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/25"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-orange-500 text-white font-semibold text-sm tracking-wide hover:bg-orange-400 transition-colors shadow-lg shadow-orange-500/25"
             >
               Nos Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="/contact"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/30 text-white font-semibold text-sm tracking-wide hover:border-amber-400 hover:text-amber-400 transition-colors backdrop-blur-sm"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/30 text-white font-semibold text-sm tracking-wide hover:border-orange-400 hover:text-orange-400 transition-colors backdrop-blur-sm"
             >
               <Phone className="w-4 h-4" />
               Contactez-nous
@@ -273,17 +273,43 @@ export default function Hero() {
             className="bottom-16 right-8"
           />
 
-          {/* Decorative ring */}
+          {/* Decorative rings */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-dashed border-white/10"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full border-2 border-dashed border-white/20"
             animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-amber-500/20"
-            animate={{ rotate: -360 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           />
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-orange-500/40"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border border-white/30"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          />
+          {/* Pulsing wave rings */}
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={`wave-${i}`}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-orange-400/30"
+              initial={{ width: 80, height: 80, opacity: 0.6 }}
+              animate={{
+                width: [80, 280],
+                height: [80, 280],
+                opacity: [0.5, 0],
+              }}
+              transition={{
+                duration: 3,
+                delay: i * 1,
+                repeat: Infinity,
+                ease: "easeOut",
+              }}
+            />
+          ))}
+          {/* Center glow dot */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-orange-500/60 shadow-[0_0_20px_rgba(249,115,22,0.5)]" />
         </div>
       </div>
 
@@ -301,7 +327,7 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-amber-500/80" />
+          <ChevronDown className="w-5 h-5 text-orange-500/80" />
         </motion.div>
       </motion.div>
     </section>

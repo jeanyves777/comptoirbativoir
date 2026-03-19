@@ -60,8 +60,8 @@ export default function PrivacyPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6">
-                <Shield className="w-8 h-8 text-amber-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 mb-6">
+                <Shield className="w-8 h-8 text-orange-500" />
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-neutral-900 dark:text-white">
                 Politique de Confidentialité
@@ -89,10 +89,10 @@ export default function PrivacyPage() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-amber-500"
+                    className="flex items-center gap-2 py-1 text-sm transition-colors duration-200 text-neutral-600 dark:text-neutral-300 hover:text-orange-500"
                   >
-                    <ChevronRight size={14} className="text-amber-500/60" />
-                    <span className="text-amber-500/60 font-mono text-xs">Article {index + 1}</span>
+                    <ChevronRight size={14} className="text-orange-500/60" />
+                    <span className="text-orange-500/60 font-mono text-xs">Article {index + 1}</span>
                     {item.label}
                   </a>
                 </li>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
           <div className="legal-content text-neutral-600 dark:text-neutral-300">
             <AnimatedSection id="introduction">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 1 —</span> Introduction
+                <span className="text-orange-500 mr-2">Article 1 —</span> Introduction
               </h2>
               <p className="leading-relaxed mb-4">
                 Le COMPTOIR DES BATISSEURS IVOIRIENS (ci-après « CBI » ou « la Société ») accorde une importance
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
 
             <AnimatedSection id="collecte">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 2 —</span> Collecte des Données
+                <span className="text-orange-500 mr-2">Article 2 —</span> Collecte des Données
               </h2>
               <p className="leading-relaxed mb-4">
                 Dans le cadre de son activité, CBI est amenée à collecter les catégories de données personnelles suivantes :
@@ -144,7 +144,7 @@ export default function PrivacyPage() {
 
             <AnimatedSection id="utilisation">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 3 —</span> Utilisation des Données
+                <span className="text-orange-500 mr-2">Article 3 —</span> Utilisation des Données
               </h2>
               <p className="leading-relaxed mb-4">
                 Les données personnelles collectées sont utilisées aux fins suivantes :
@@ -166,7 +166,7 @@ export default function PrivacyPage() {
 
             <AnimatedSection id="cookies">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 4 —</span> Cookies
+                <span className="text-orange-500 mr-2">Article 4 —</span> Cookies
               </h2>
               <p className="leading-relaxed mb-4">
                 Notre site utilise des cookies pour améliorer votre expérience de navigation. Les cookies sont de
@@ -183,7 +183,7 @@ export default function PrivacyPage() {
               <p className="leading-relaxed">
                 Vous pouvez gérer vos préférences en matière de cookies à tout moment via les paramètres de votre
                 navigateur. Pour plus de détails, consultez notre{' '}
-                <Link href="/cookies" className="text-amber-600 dark:text-amber-400 hover:text-amber-500 underline underline-offset-2">
+                <Link href="/cookies" className="text-orange-600 dark:text-orange-400 hover:text-orange-500 underline underline-offset-2">
                   Politique relative aux Cookies
                 </Link>.
               </p>
@@ -191,7 +191,7 @@ export default function PrivacyPage() {
 
             <AnimatedSection id="droits">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 5 —</span> Droits des Utilisateurs
+                <span className="text-orange-500 mr-2">Article 5 —</span> Droits des Utilisateurs
               </h2>
               <p className="leading-relaxed mb-4">
                 Conformément à la Loi n°2013-450 du 19 juin 2013 relative à la protection des données à caractère
@@ -214,7 +214,7 @@ export default function PrivacyPage() {
 
             <AnimatedSection id="securite">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 6 —</span> Sécurité
+                <span className="text-orange-500 mr-2">Article 6 —</span> Sécurité
               </h2>
               <p className="leading-relaxed mb-4">
                 CBI met en œuvre les mesures techniques et organisationnelles appropriées pour assurer la sécurité et
@@ -235,7 +235,7 @@ export default function PrivacyPage() {
 
             <AnimatedSection id="contact">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-neutral-900 dark:text-white">
-                <span className="text-amber-500 mr-2">Article 7 —</span> Contact
+                <span className="text-orange-500 mr-2">Article 7 —</span> Contact
               </h2>
               <p className="leading-relaxed mb-4">
                 Pour toute question relative à la présente politique de confidentialité ou pour exercer vos droits
@@ -248,11 +248,11 @@ export default function PrivacyPage() {
                 <p className="mb-1">Abidjan, Côte d&apos;Ivoire</p>
                 <p className="mb-1">
                   Téléphone :{' '}
-                  <a href="tel:+2252722266533" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">+225 27 22 26 65 33</a>
+                  <a href="tel:+2252722266533" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">+225 27 22 26 65 33</a>
                 </p>
                 <p>
                   E-mail :{' '}
-                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-amber-600 dark:text-amber-400 hover:text-amber-500">
+                  <a href="mailto:comptoirbatisseurivoiriens@gmail.com" className="text-orange-600 dark:text-orange-400 hover:text-orange-500">
                     comptoirbatisseurivoiriens@gmail.com
                   </a>
                 </p>
