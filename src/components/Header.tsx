@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks } from '@/lib/data'
-// import ThemeToggle from './ThemeToggle'
+import ThemeToggle from '@/components/ThemeToggle'
 import Logo from '@/components/Logo'
 
 export default function Header() {
@@ -20,7 +20,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -34,31 +33,15 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'backdrop-blur-xl shadow-lg shadow-black/20 border-b border-amber-500/10'
-          : 'backdrop-blur-md'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/90 dark:bg-neutral-950/90 ${
+        isScrolled ? 'shadow-md dark:shadow-neutral-900/50' : ''
       }`}
-      style={{
-        backgroundColor: isScrolled ? 'var(--glass-bg)' : 'rgba(0,0,0,0)',
-      }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="relative group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="transition-all duration-300"
-            >
-              <Logo size="sm" variant="light" showText={false} />
-            </motion.div>
-            <span
-              className="absolute inset-0 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{
-                boxShadow: '0 0 30px rgba(245, 158, 11, 0.4)',
-              }}
-            />
+            <Logo size="sm" showText={false} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,7 +50,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-amber-400 transition-colors duration-200 group"
+                className="relative px-4 py-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-200 group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-3/4 rounded-full" />
@@ -75,32 +58,23 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA + Theme Toggle */}
-          <div className="hidden md:flex items-center gap-2">
-            {/* <ThemeToggle /> */}
+          {/* CTA + Theme Toggle (Desktop) */}
+          <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Link
               href="/contact"
-              className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-gray-950 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 hover:scale-105 active:scale-95"
-              style={{
-                background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-              }}
+              className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/25"
             >
-              <span className="relative z-10">Obtenir un Devis</span>
-              <span
-                className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
-                }}
-              />
+              Obtenir un Devis
             </Link>
           </div>
 
           {/* Mobile: Theme Toggle + Menu Button */}
-          <div className="flex md:hidden items-center gap-1">
-            {/* <ThemeToggle /> */}
+          <div className="flex md:hidden items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-2 text-gray-300 hover:text-amber-400 transition-colors"
+              className="p-2 text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
@@ -141,7 +115,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 top-16 bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 top-16 bg-black/40 dark:bg-black/60 backdrop-blur-sm md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -151,8 +125,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-16 right-0 bottom-0 w-72 backdrop-blur-xl border-l border-amber-500/10 md:hidden overflow-y-auto"
-              style={{ backgroundColor: 'var(--glass-bg)' }}
+              className="fixed top-16 right-0 bottom-0 w-72 bg-white dark:bg-neutral-950 border-l border-neutral-200 dark:border-neutral-800 md:hidden overflow-y-auto"
             >
               <div className="flex flex-col p-6 gap-2">
                 {navLinks.map((link, i) => (
@@ -165,7 +138,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-4 py-3 text-gray-300 hover:text-amber-400 hover:bg-amber-500/5 rounded-lg transition-all duration-200 font-medium"
+                      className="block px-4 py-3 text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-200 font-medium"
                     >
                       {link.label}
                     </Link>
@@ -176,15 +149,12 @@ export default function Header() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navLinks.length * 0.05 + 0.15 }}
-                  className="mt-4 pt-4 border-t border-gray-800"
+                  className="mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800"
                 >
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full text-center px-5 py-3 text-sm font-semibold text-gray-950 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25"
-                    style={{
-                      background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-                    }}
+                    className="block w-full text-center px-5 py-3 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/25"
                   >
                     Obtenir un Devis
                   </Link>

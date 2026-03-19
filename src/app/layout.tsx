@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Poppins, Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
-const poppins = Poppins({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-heading',
   display: 'swap',
 })
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={`${poppins.variable} ${inter.variable} dark`} suppressHydrationWarning>
+    <html lang="fr" className={`${jakarta.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -44,19 +44,16 @@ export default function RootLayout({
               (function() {
                 try {
                   var theme = localStorage.getItem('cbi-theme');
-                  if (theme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                  } else {
+                  if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
                   }
-                  document.documentElement.setAttribute('data-theme', theme || 'dark');
                 } catch(e) {}
               })();
             `,
           }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors duration-300">
         <ThemeProvider>
           {children}
         </ThemeProvider>

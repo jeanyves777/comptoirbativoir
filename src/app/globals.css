@@ -1,46 +1,14 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #f59e0b;
   --color-primary-dark: #d97706;
   --color-primary-light: #fbbf24;
-  --color-dark: #0f172a;
-  --color-dark-light: #1e293b;
-  --color-dark-lighter: #334155;
   --color-accent: #3b82f6;
-  --font-heading: 'Poppins', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
-}
-
-/* ===== Theme CSS Custom Properties ===== */
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-card: #ffffff;
-  --bg-elevated: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --border-color: #e2e8f0;
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(226, 232, 240, 0.5);
-  --scrollbar-track: #e2e8f0;
-  --scrollbar-thumb: #f59e0b;
-}
-
-.dark {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: #1e293b;
-  --bg-elevated: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --border-color: #334155;
-  --glass-bg: rgba(2, 6, 23, 0.9);
-  --glass-border: rgba(245, 158, 11, 0.1);
-  --scrollbar-track: #1e293b;
-  --scrollbar-thumb: #f59e0b;
 }
 
 /* ===== Base Styles ===== */
@@ -50,86 +18,15 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--scrollbar-track); }
-::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
-::selection { background: #f59e0b; color: #0f172a; }
-
-/* ===================================================================
-   LIGHT MODE: Override all hardcoded dark Tailwind classes.
-   We use [class] for slightly higher specificity over Tailwind utilities.
-   =================================================================== */
-
-/* --- Backgrounds --- */
-html:not(.dark) [class*="bg-gray-950"] { background-color: #ffffff !important; }
-html:not(.dark) [class*="bg-gray-900"] { background-color: #f8fafc !important; }
-html:not(.dark) [class*="bg-gray-800"] { background-color: #f1f5f9 !important; }
-
-/* Glass / semi-transparent backgrounds */
-html:not(.dark) [class*="bg-gray-950/"] { background-color: rgba(255,255,255,0.92) !important; }
-html:not(.dark) [class*="bg-gray-900/"] { background-color: rgba(248,250,252,0.8) !important; }
-html:not(.dark) [class*="bg-gray-800/"] { background-color: rgba(241,245,249,0.6) !important; }
-html:not(.dark) [class*="bg-black/"] { background-color: rgba(0,0,0,0.2) !important; }
-
-/* --- Text colors --- */
-html:not(.dark) [class*="text-white"] { color: #0f172a !important; }
-html:not(.dark) [class*="text-gray-100"] { color: #1e293b !important; }
-html:not(.dark) [class*="text-gray-200"] { color: #334155 !important; }
-html:not(.dark) [class*="text-gray-300"] { color: #475569 !important; }
-html:not(.dark) [class*="text-gray-400"] { color: #64748b !important; }
-html:not(.dark) [class*="text-gray-500"] { color: #94a3b8 !important; }
-
-/* --- Borders --- */
-html:not(.dark) [class*="border-gray-800"] { border-color: #e2e8f0 !important; }
-html:not(.dark) [class*="border-gray-700"] { border-color: #e2e8f0 !important; }
-html:not(.dark) [class*="border-gray-900"] { border-color: #e2e8f0 !important; }
-
-/* --- Hover states --- */
-html:not(.dark) [class*="hover:text-white"]:hover { color: #0f172a !important; }
-html:not(.dark) [class*="hover:bg-gray-800"]:hover { background-color: #f1f5f9 !important; }
-html:not(.dark) [class*="hover:bg-gray-900"]:hover { background-color: #f8fafc !important; }
-
-/* --- Gradient text (keep visible in light mode) --- */
-html:not(.dark) [class*="text-transparent"] { color: transparent !important; }
-
-/* --- Shadows --- */
-html:not(.dark) [class*="shadow-black/"] { --tw-shadow-color: rgba(0,0,0,0.08) !important; }
-
-/* --- Amber colors stay the same in both modes --- */
-/* (no overrides needed for amber-400, amber-500, amber-600) */
-
-/* --- Ring and outline --- */
-html:not(.dark) [class*="ring-gray-800"] { --tw-ring-color: #e2e8f0 !important; }
-
-/* --- Divide --- */
-html:not(.dark) [class*="divide-gray-800"] > :not(:last-child) { border-color: #e2e8f0 !important; }
-
-/* --- Specific component adjustments --- */
-
-/* Footer in light mode */
-html:not(.dark) footer { background-color: #1e293b !important; }
-html:not(.dark) footer [class*="text-white"] { color: #f8fafc !important; }
-html:not(.dark) footer [class*="text-gray-400"] { color: #94a3b8 !important; }
-html:not(.dark) footer [class*="text-gray-500"] { color: #64748b !important; }
-html:not(.dark) footer [class*="border-gray-800"] { border-color: #334155 !important; }
-html:not(.dark) footer [class*="bg-gray-800"] { background-color: #334155 !important; }
-html:not(.dark) footer [class*="bg-gray-950"] { background-color: #0f172a !important; }
-
-/* Cards should have subtle shadow in light mode */
-html:not(.dark) section [class*="backdrop-blur"] {
-  background-color: rgba(255,255,255,0.9) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-}
-
-/* Keep admin portal always dark */
-html:not(.dark) [data-admin="true"] [class*="bg-gray-950"] { background-color: #0f172a !important; }
-html:not(.dark) [data-admin="true"] [class*="text-white"] { color: #ffffff !important; }
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb { background: #404040; }
+::selection { background: #f59e0b; color: #171717; }

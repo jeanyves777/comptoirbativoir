@@ -2,118 +2,123 @@
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
-  variant?: 'dark' | 'light' | 'auto'
   showText?: boolean
 }
 
 const sizeConfig = {
-  sm: { icon: 40, textSize: '0.5rem', gap: 4, letterSpacing: '0.08em' },
-  md: { icon: 56, textSize: '0.6rem', gap: 6, letterSpacing: '0.1em' },
-  lg: { icon: 80, textSize: '0.75rem', gap: 8, letterSpacing: '0.12em' },
+  sm: { icon: 36, textSize: '0.65rem', gap: 4, subtitleSize: '0.4rem' },
+  md: { icon: 48, textSize: '0.8rem', gap: 6, subtitleSize: '0.5rem' },
+  lg: { icon: 72, textSize: '1rem', gap: 8, subtitleSize: '0.6rem' },
 }
 
-export default function Logo({ size = 'md', variant = 'auto', showText = true }: LogoProps) {
+export default function Logo({ size = 'md', showText = true }: LogoProps) {
   const config = sizeConfig[size]
-
-  const amber = '#f59e0b'
-  const amberLight = '#fbbf24'
-  const dark = variant === 'light' ? '#ffffff' : variant === 'dark' ? '#0f172a' : 'currentColor'
+  const uid = `logo-${size}`
 
   return (
     <div
       style={{
         display: 'inline-flex',
-        flexDirection: 'column',
         alignItems: 'center',
-        gap: `${config.gap}px`,
+        gap: `${config.gap + 4}px`,
       }}
     >
       <svg
         width={config.icon}
         height={config.icon}
-        viewBox="0 0 200 200"
+        viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="CBI Logo"
       >
         <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor={amberLight} />
-            <stop offset="100%" stopColor={amber} />
+          <linearGradient id={`${uid}-amber`} x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#fbbf24" />
+            <stop offset="100%" stopColor="#f59e0b" />
           </linearGradient>
-          <linearGradient id="boltGrad" x1="100" y1="30" x2="100" y2="170" gradientUnits="userSpaceOnUse">
+          <linearGradient id={`${uid}-bolt`} x1="60" y1="20" x2="60" y2="90" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#fde68a" />
-            <stop offset="100%" stopColor={amber} />
+            <stop offset="100%" stopColor="#f59e0b" />
           </linearGradient>
         </defs>
 
-        {/* Outer rounded square frame */}
-        <rect
-          x="8" y="8" width="184" height="184" rx="32"
-          stroke="url(#logoGrad)" strokeWidth="5" fill="none"
-        />
-
-        {/* Inner accent lines - top left and bottom right corners */}
-        <path d="M40 8 L40 28 Q40 40 28 40 L8 40" stroke={amber} strokeWidth="3" fill="none" strokeLinecap="round" />
-        <path d="M160 192 L160 172 Q160 160 172 160 L192 160" stroke={amber} strokeWidth="3" fill="none" strokeLinecap="round" />
+        {/* Rounded square background */}
+        <rect x="4" y="4" width="112" height="112" rx="22" fill="#0f172a" />
+        <rect x="4" y="4" width="112" height="112" rx="22" stroke={`url(#${uid}-amber)`} strokeWidth="3" fill="none" />
 
         {/* Letter C */}
         <path
-          d="M38 80 C38 58 54 42 76 42 L84 42 L84 56 L76 56 C63 56 54 65 54 80 L54 120 C54 135 63 144 76 144 L84 144 L84 158 L76 158 C54 158 38 142 38 120 Z"
-          fill="url(#logoGrad)"
+          d="M22 46 Q22 30 38 30 L46 30 L46 38 L38 38 Q32 38 32 46 L32 68 Q32 76 38 76 L46 76 L46 84 L38 84 Q22 84 22 68 Z"
+          fill={`url(#${uid}-amber)`}
         />
 
         {/* Letter B */}
         <path
-          d="M92 42 L120 42 C136 42 146 52 146 66 C146 74 142 80 135 84 C144 88 150 96 150 108 L150 112 C150 128 138 158 120 158 L92 158 Z"
-          fill="url(#logoGrad)"
+          d="M52 30 L70 30 Q82 30 82 40 Q82 48 74 50 Q84 52 84 62 Q84 74 72 74 L68 74 L52 74 Z
+             M62 38 L62 47 L68 47 Q72 47 72 42 Q72 38 68 38 Z
+             M62 54 L62 66 L70 66 Q74 66 74 60 Q74 54 70 54 Z"
+          fill={`url(#${uid}-amber)`}
+          fillRule="evenodd"
         />
-        {/* B inner cutout top */}
-        <rect x="108" y="56" width="22" height="22" rx="8" fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'} />
-        {/* B inner cutout bottom */}
-        <rect x="108" y="90" width="26" height="24" rx="8" fill={variant === 'dark' ? '#0f172a' : variant === 'light' ? '#1e293b' : '#0f172a'} />
 
-        {/* Lightning bolt - the key brand element */}
+        {/* Letter I - stem */}
+        <rect x="90" y="30" width="10" height="44" rx="2" fill={`url(#${uid}-amber)`} />
+
+        {/* Lightning bolt through the I */}
         <path
-          d="M122 36 L106 88 L120 88 L98 168 L118 104 L104 104 L122 36Z"
-          fill="url(#boltGrad)"
-          opacity="0.9"
+          d="M99 26 L91 50 L96 50 L88 78 L100 48 L95 48 L103 26 Z"
+          fill={`url(#${uid}-bolt)`}
         />
 
-        {/* Letter I */}
-        <path
-          d="M158 42 L178 42 L178 158 L158 158 Z"
-          fill="url(#logoGrad)"
-        />
-        {/* I dot accent */}
-        <circle cx="168" cy="30" r="6" fill={amber} />
+        {/* Circuit line decoration at the bottom */}
+        <g opacity="0.5">
+          <line x1="18" y1="98" x2="38" y2="98" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="38" cy="98" r="2.5" fill="#f59e0b" />
+          <line x1="43" y1="98" x2="58" y2="98" stroke="#f59e0b" strokeWidth="1" strokeLinecap="round" strokeDasharray="3 3" />
+          <circle cx="62" cy="98" r="2" fill="#f59e0b" />
+          <line x1="66" y1="98" x2="78" y2="98" stroke="#f59e0b" strokeWidth="1" strokeLinecap="round" strokeDasharray="3 3" />
+          <circle cx="82" cy="98" r="2.5" fill="#f59e0b" />
+          <line x1="85" y1="98" x2="102" y2="98" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" />
+        </g>
 
-        {/* Bottom circuit line decoration */}
-        <g opacity="0.6">
-          <line x1="30" y1="178" x2="80" y2="178" stroke={amber} strokeWidth="2" strokeLinecap="round" />
-          <circle cx="80" cy="178" r="3" fill={amber} />
-          <line x1="80" y1="178" x2="120" y2="178" stroke={amber} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 4" />
-          <circle cx="120" cy="178" r="3" fill={amber} />
-          <line x1="120" y1="178" x2="170" y2="178" stroke={amber} strokeWidth="2" strokeLinecap="round" />
+        {/* Small circuit node branch going down */}
+        <g opacity="0.35">
+          <line x1="62" y1="98" x2="62" y2="106" stroke="#f59e0b" strokeWidth="1" strokeLinecap="round" />
+          <circle cx="62" cy="107" r="1.5" fill="#f59e0b" />
         </g>
       </svg>
 
       {showText && (
-        <span
+        <div
           style={{
-            fontSize: config.textSize,
-            fontWeight: 700,
-            letterSpacing: config.letterSpacing,
-            textTransform: 'uppercase' as const,
-            color: dark,
-            textAlign: 'center' as const,
-            lineHeight: 1.3,
-            maxWidth: `${config.icon * 2.5}px`,
-            fontFamily: 'inherit',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1px',
           }}
         >
-          Comptoir des B&acirc;tisseurs Ivoiriens
-        </span>
+          <span
+            className="text-slate-900 dark:text-white"
+            style={{
+              fontSize: config.textSize,
+              fontWeight: 800,
+              letterSpacing: '0.05em',
+              lineHeight: 1.1,
+            }}
+          >
+            CBI
+          </span>
+          <span
+            className="text-slate-500 dark:text-slate-400"
+            style={{
+              fontSize: config.subtitleSize,
+              fontWeight: 500,
+              letterSpacing: '0.02em',
+              lineHeight: 1.3,
+            }}
+          >
+            Comptoir des B&#226;tisseurs Ivoiriens
+          </span>
+        </div>
       )}
     </div>
   )

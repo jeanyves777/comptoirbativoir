@@ -8,7 +8,11 @@ import { motion, useInView } from "framer-motion";
 /* ------------------------------------------------------------------ */
 function GoogleLogo({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"
         fill="#4285F4"
@@ -35,7 +39,11 @@ function GoogleLogo({ className = "w-6 h-6" }: { className?: string }) {
 function Star({ filled = true }: { filled?: boolean }) {
   return (
     <svg
-      className={`w-4 h-4 ${filled ? "text-amber-400" : "text-gray-600"}`}
+      className={`w-4 h-4 ${
+        filled
+          ? "text-amber-400"
+          : "text-neutral-300 dark:text-neutral-600"
+      }`}
       viewBox="0 0 20 20"
       fill="currentColor"
     >
@@ -121,37 +129,36 @@ function ReviewCard({
         delay: 0.2 + index * 0.1,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      className="group relative"
+      className="h-full p-6 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm"
     >
-      {/* Gradient border on hover */}
-      <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[0.5px]" />
-
-      <div className="relative h-full p-6 rounded-2xl bg-gray-900/50 backdrop-blur-xl border border-white/[0.06] hover:border-amber-500/20 transition-all duration-300">
-        {/* Header: name + Google icon */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-3">
-            {/* Avatar */}
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold text-sm">
-              {review.name.charAt(0)}
-            </div>
-            <div>
-              <h4 className="text-white font-semibold text-sm">
-                {review.name}
-              </h4>
-              <p className="text-gray-500 text-xs">{review.date}</p>
-            </div>
+      {/* Header: avatar + name + Google icon */}
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-3">
+          {/* Avatar */}
+          <div className="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-sm">
+            {review.name.charAt(0)}
           </div>
-          <GoogleLogo className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity" />
+          <div>
+            <h4 className="text-neutral-900 dark:text-white font-semibold text-sm">
+              {review.name}
+            </h4>
+            <p className="text-neutral-400 dark:text-neutral-500 text-xs">
+              {review.date}
+            </p>
+          </div>
         </div>
-
-        {/* Stars */}
-        <div className="mb-3">
-          <StarRating rating={review.rating} />
-        </div>
-
-        {/* Review text */}
-        <p className="text-gray-400 text-sm leading-relaxed">{review.text}</p>
+        <GoogleLogo className="w-5 h-5 opacity-60" />
       </div>
+
+      {/* Stars */}
+      <div className="mb-3">
+        <StarRating rating={review.rating} />
+      </div>
+
+      {/* Review text */}
+      <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+        {review.text}
+      </p>
     </motion.div>
   );
 }
@@ -166,25 +173,9 @@ export default function GoogleReviews() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 overflow-hidden bg-gray-950"
+      className="py-24 bg-neutral-50 dark:bg-neutral-900"
     >
-      {/* Background effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-amber-500/[0.03] blur-[120px]"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut" as const,
-          }}
-        />
-      </div>
-
-      {/* Top line accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* ---- Section Header ---- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -196,18 +187,15 @@ export default function GoogleReviews() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest mb-4"
           >
             <GoogleLogo className="w-4 h-4" />
             Avis Clients
           </motion.span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
-            Avis de nos{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
-              clients
-            </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mt-2">
+            Avis de nos clients
           </h2>
-          <p className="mt-4 text-gray-500 max-w-lg mx-auto">
+          <p className="mt-4 text-neutral-600 dark:text-neutral-400 max-w-lg mx-auto">
             Decouvrez ce que nos clients pensent de nos services et de notre
             accompagnement.
           </p>
@@ -220,20 +208,22 @@ export default function GoogleReviews() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="flex justify-center mb-12"
         >
-          <div className="relative inline-flex items-center gap-6 px-8 py-5 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-white/[0.06]">
+          <div className="inline-flex items-center gap-6 px-8 py-5 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm">
             {/* Google G */}
             <GoogleLogo className="w-10 h-10" />
 
             {/* Divider */}
-            <div className="w-px h-12 bg-gray-700/50" />
+            <div className="w-px h-12 bg-neutral-200 dark:bg-neutral-700" />
 
             {/* Rating */}
             <div className="text-center">
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-white">
+                <span className="text-4xl font-bold text-neutral-900 dark:text-white">
                   {overallRating}
                 </span>
-                <span className="text-gray-500 text-sm">/5</span>
+                <span className="text-neutral-400 dark:text-neutral-500 text-sm">
+                  /5
+                </span>
               </div>
               <div className="flex justify-center mt-1">
                 <StarRating rating={Math.round(Number(overallRating))} />
@@ -241,12 +231,14 @@ export default function GoogleReviews() {
             </div>
 
             {/* Divider */}
-            <div className="w-px h-12 bg-gray-700/50" />
+            <div className="w-px h-12 bg-neutral-200 dark:bg-neutral-700" />
 
             {/* Info */}
             <div className="text-center">
-              <p className="text-white font-semibold text-lg">Avis Google</p>
-              <p className="text-gray-500 text-sm">
+              <p className="text-neutral-900 dark:text-white font-semibold text-lg">
+                Avis Google
+              </p>
+              <p className="text-neutral-400 dark:text-neutral-500 text-sm">
                 {reviews.length} avis verifies
               </p>
             </div>
@@ -265,9 +257,6 @@ export default function GoogleReviews() {
           ))}
         </div>
       </div>
-
-      {/* Bottom line accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
     </section>
   );
 }

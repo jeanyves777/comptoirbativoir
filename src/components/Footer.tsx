@@ -7,7 +7,7 @@ import { companyInfo, navLinks } from '@/lib/data'
 import Logo from '@/components/Logo'
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -24,40 +24,40 @@ export default function Footer() {
     { href: companyInfo.social.linkedin, icon: Linkedin, label: 'LinkedIn' },
   ]
 
-  return (
-    <footer className="relative bg-gray-950 border-t border-gray-800/50">
-      {/* Animated Divider */}
-      <div className="absolute top-0 left-0 right-0 h-px overflow-hidden">
-        <div
-          className="h-full w-[200%] animate-[shimmer_3s_linear_infinite]"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, #f59e0b, #d97706, #f59e0b, transparent)',
-          }}
-        />
-      </div>
+  const services = [
+    'Coffret Inverseur',
+    'Climatisation',
+    'Groupe Électrogène',
+    'Maintenance',
+    'Électricité Bâtiment',
+  ]
 
-      <style jsx>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0%); }
-        }
-      `}</style>
+  const legalLinks = [
+    { href: '/legal', label: 'Mentions Légales' },
+    { href: '/privacy', label: 'Confidentialité' },
+    { href: '/terms', label: 'CGU' },
+    { href: '/cookies', label: 'Cookies' },
+  ]
+
+  return (
+    <footer className="bg-neutral-900 dark:bg-neutral-950">
+      {/* Top amber gradient line */}
+      <div className="h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {/* Top row: Logo + Contact info side by side */}
+        {/* Top row: Company info + Contact info */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 pb-10 border-b border-gray-800/50"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 pb-10 border-b border-neutral-800"
         >
           {/* Company Info + Social */}
           <motion.div variants={fadeInUp} custom={0}>
             <Link href="/" className="inline-block mb-4">
-              <Logo size="md" variant="light" showText={true} />
+              <Logo size="md" showText />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-md">
+            <p className="text-neutral-400 text-sm leading-relaxed mb-6 max-w-md">
               {companyInfo.description}
             </p>
             <div className="flex gap-3">
@@ -68,9 +68,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-gray-800/50 text-gray-400 hover:bg-amber-500/10 hover:text-amber-400 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-amber-400 transition-all duration-300"
                 >
-                  <social.icon size={16} />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>
@@ -83,42 +83,50 @@ export default function Footer() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <MapPin size={14} className="text-amber-500" />
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {companyInfo.address}
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <Phone size={14} className="text-amber-500" />
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
+                  <Phone size={16} className="text-amber-500" />
                 </div>
                 <div className="space-y-1">
                   {companyInfo.phones.map((phone) => (
-                    <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="block text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200">
+                    <a
+                      key={phone}
+                      href={`tel:${phone.replace(/\s/g, '')}`}
+                      className="block text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                    >
                       {phone}
                     </a>
                   ))}
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
-                  <Mail size={14} className="text-amber-500" />
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
+                  <Mail size={16} className="text-amber-500" />
                 </div>
                 <div className="space-y-1">
                   {companyInfo.emails.map((email) => (
-                    <a key={email} href={`mailto:${email}`} className="block text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 break-all">
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="block text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200 break-all"
+                    >
                       {email}
                     </a>
                   ))}
                 </div>
               </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center mt-0.5">
+                  <MapPin size={16} className="text-amber-500" />
+                </div>
+                <p className="text-neutral-400 text-sm leading-relaxed">
+                  {companyInfo.address}
+                </p>
+              </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Bottom row: Links */}
+        {/* Bottom row: 4 columns */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -133,15 +141,19 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
-                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                  <Link
+                    href={link.href}
+                    className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                  >
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
-                  <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                <Link
+                  href="/blog"
+                  className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                >
                   Blog
                 </Link>
               </li>
@@ -154,10 +166,12 @@ export default function Footer() {
               Nos Services
             </h3>
             <ul className="space-y-2.5">
-              {['Coffret Inverseur', 'Climatisation', 'Groupe Électrogène', 'Maintenance', 'Électricité Bâtiment'].map((s) => (
+              {services.map((s) => (
                 <li key={s}>
-                  <Link href="/services" className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
-                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                  <Link
+                    href="/services"
+                    className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                  >
                     {s}
                   </Link>
                 </li>
@@ -171,15 +185,12 @@ export default function Footer() {
               Informations Légales
             </h3>
             <ul className="space-y-2.5">
-              {[
-                { href: '/legal', label: 'Mentions Légales' },
-                { href: '/privacy', label: 'Confidentialité' },
-                { href: '/terms', label: 'CGU' },
-                { href: '/cookies', label: 'Cookies' },
-              ].map((link) => (
+              {legalLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-amber-400 text-sm transition-colors duration-200 inline-flex items-center gap-1.5 group">
-                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-amber-500 transition-colors duration-200" />
+                  <Link
+                    href={link.href}
+                    className="text-neutral-400 hover:text-amber-400 text-sm transition-colors duration-200"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -192,12 +203,12 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
               Besoin d&apos;un Devis ?
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-neutral-400 text-sm leading-relaxed mb-4">
               Contactez-nous pour un devis gratuit et personnalisé.
             </p>
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 font-semibold text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg shadow-amber-500/20"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-500 text-white font-semibold text-sm hover:bg-amber-600 transition-all duration-300"
             >
               Obtenir un Devis
             </Link>
@@ -210,9 +221,9 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="pt-6 border-t border-gray-800/50 text-center"
+          className="pt-6 border-t border-neutral-800 text-center"
         >
-          <p className="text-gray-500 text-sm">
+          <p className="text-neutral-500 text-sm">
             &copy; {currentYear} {companyInfo.name}. Tous droits r&eacute;serv&eacute;s.
           </p>
         </motion.div>
